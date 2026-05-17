@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نصوص في التخطيط الاجتماعي بالانجلش| فرقة ثالثة خدمة اجتماعيه</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1a56db;--blue-dark:#1041a3;--blue-light:#e8f0fe;--gold:#f59e0b;--gold-light:#fef3c7;--green:#059669;--green-light:#d1fae5;--red:#dc2626;--red-light:#fee2e2;--gray:#6b7280;--gray-light:#f9fafb;--white:#ffffff;--border:#e5e7eb;--text:#111827;--text2:#374151;--shadow:0 4px 20px rgba(0,0,0,.08);--shadow-lg:0 10px 40px rgba(0,0,0,.12);--radius:14px;--radius-sm:8px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Tajawal',sans-serif;background:linear-gradient(135deg,#f0f4ff 0%,#faf5ff 100%);min-height:100vh;color:var(--text)}
+.screen{display:none;min-height:100vh}
+.screen.active{display:flex;flex-direction:column}
+ 
+/* LOGIN */
+#login-screen{align-items:center;justify-content:center;padding:20px;background:linear-gradient(160deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)}
+.login-box{background:#fff;border-radius:24px;padding:40px;max-width:440px;width:100%;box-shadow:0 25px 60px rgba(0,0,0,.3);text-align:center}
+.login-logo{width:80px;height:80px;background:linear-gradient(135deg,#1a56db,#7c3aed);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:36px}
+.login-title{font-size:24px;font-weight:800;color:var(--text);margin-bottom:6px}
+.login-sub{font-size:14px;color:var(--gray);margin-bottom:30px}
+.field-row{margin-bottom:14px;text-align:right}
+.field-label{font-size:13px;font-weight:600;color:var(--text2);margin-bottom:6px;display:block}
+.field-input{width:100%;padding:13px 16px;border:2px solid var(--border);border-radius:var(--radius-sm);font-family:'Tajawal',sans-serif;font-size:15px;outline:none;transition:border-color .2s;background:#fff;color:var(--text)}
+.field-input:focus{border-color:var(--blue)}
+.field-input.error{border-color:var(--red);animation:shake .3s}
+.code-style{font-family:'Courier New',monospace;font-size:18px;font-weight:700;text-align:center;letter-spacing:3px}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.login-btn{width:100%;padding:14px;background:linear-gradient(135deg,#1a56db,#7c3aed);color:#fff;border:none;border-radius:var(--radius-sm);font-family:'Tajawal',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:6px;transition:opacity .2s}
+.login-btn:hover{opacity:.9}
+.login-err{color:var(--red);font-size:13px;margin-top:10px;min-height:20px;line-height:1.6}
+.telegram-section{margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+.telegram-section p{font-size:13px;color:var(--gray);margin-bottom:12px}
+.telegram-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#0088cc;color:#fff;border:none;border-radius:var(--radius-sm);font-family:'Tajawal',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+ 
+/* HOME */
+#home-screen{padding:0}
+.home-hero{background:linear-gradient(160deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:36px 20px 40px;text-align:center;position:relative;overflow:hidden}
+.home-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+ 
+.creator-section{position:relative;z-index:1;margin-bottom:18px}
+.creator-label{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.creator-avatar{width:90px;height:90px;border-radius:50%;border:3px solid rgba(255,255,255,.3);margin:0 auto 10px;cursor:pointer;position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.05))}
+.creator-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.creator-avatar-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;color:rgba(255,255,255,.5)}
+.creator-avatar-placeholder span{font-size:26px;margin-bottom:2px}
+.creator-name{font-size:15px;font-weight:800;color:#fff;margin-bottom:3px}
+.creator-info{font-size:12px;color:rgba(255,255,255,.6)}
+ 
+.home-title{font-size:26px;font-weight:800;color:#fff;margin-bottom:6px;position:relative;z-index:1}
+.home-sub{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:6px;position:relative;z-index:1}
+.home-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:5px 14px;border-radius:99px;font-size:12px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);position:relative;z-index:1;margin-bottom:20px}
+ 
+.leaders-section{margin-top:20px;position:relative;z-index:1}
+.leaders-label{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.scholars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 4px}
+.scholar-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:12px 8px;text-align:center;cursor:pointer;transition:background .2s}
+.scholar-card:hover{background:rgba(255,255,255,.15)}
+.scholar-img{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.05));border:2px dashed rgba(255,255,255,.3);margin:0 auto 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;font-size:10px;color:rgba(255,255,255,.5)}
+.scholar-img img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.scholar-img span{font-size:18px}
+.scholar-name{font-size:11px;font-weight:700;color:#fff;margin-bottom:2px}
+.scholar-role{font-size:10px;color:rgba(255,255,255,.5)}
+ 
+.home-content{padding:24px 20px;max-width:700px;margin:0 auto;width:100%}
+.section-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:16px}
+.levels-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.level-card{background:#fff;border-radius:var(--radius);padding:20px 16px;text-align:center;border:2px solid var(--border);cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.level-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--lc)}
+.level-card:hover:not(.locked){transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--lc)}
+.level-card.locked{opacity:.5;cursor:not-allowed}
+.level-card.selected{border-color:var(--lc);box-shadow:0 0 0 3px rgba(26,86,219,.15)}
+.level-card.done{border-color:var(--green)}
+.lc-0{--lc:#f59e0b}.lc-1{--lc:#1a56db}.lc-2{--lc:#7c3aed}.lc-3{--lc:#059669}
+.level-icon{font-size:32px;margin-bottom:8px}
+.level-name{font-size:16px;font-weight:800;margin-bottom:4px}
+.level-qs{font-size:12px;color:var(--gray);margin-bottom:8px}
+.level-score-badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:700;background:var(--green-light);color:var(--green)}
+.lock-icon{font-size:18px;color:var(--gray);margin-top:4px}
+.start-big-btn{width:100%;padding:16px;background:linear-gradient(135deg,#1a56db,#7c3aed);color:#fff;border:none;border-radius:var(--radius);font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;cursor:pointer;transition:opacity .2s;box-shadow:0 4px 15px rgba(26,86,219,.3);margin-bottom:12px}
+.start-big-btn:hover{opacity:.9}
+ 
+.challenge-btn{width:100%;padding:16px;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;border:none;border-radius:var(--radius);font-family:'Tajawal',sans-serif;font-size:17px;font-weight:800;cursor:pointer;transition:opacity .2s;box-shadow:0 4px 15px rgba(245,158,11,.35);margin-bottom:20px;display:none}
+.challenge-btn:hover{opacity:.9}
+ 
+.support-btn-fixed{position:fixed;bottom:20px;left:20px;z-index:999;background:#25d366;color:#fff;border:none;border-radius:50px;padding:12px 20px;font-family:'Tajawal',sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.4);display:flex;align-items:center;gap:8px;text-decoration:none;transition:transform .2s}
+.support-btn-fixed:hover{transform:scale(1.05)}
+ 
+/* QUIZ */
+#quiz-screen{background:var(--gray-light)}
+.quiz-topbar{background:linear-gradient(135deg,#1a1a2e,#0f3460);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.quiz-back{background:none;border:none;color:#fff;font-size:20px;cursor:pointer;padding:4px}
+.quiz-top-info{text-align:center}
+.quiz-level-name{font-family:'Tajawal';font-size:14px;font-weight:700;color:rgba(255,255,255,.8)}
+.quiz-counter{font-family:'Tajawal';font-size:12px;color:rgba(255,255,255,.5);margin-top:2px}
+.quiz-score-top{background:rgba(255,255,255,.15);padding:6px 14px;border-radius:99px}
+.quiz-score-top span{font-family:'Tajawal';font-size:14px;font-weight:700;color:#fff}
+.progress-track{height:6px;background:rgba(255,255,255,.1);position:sticky;top:72px;z-index:99}
+.progress-bar{height:100%;background:linear-gradient(90deg,#f59e0b,#f97316);transition:width .4s ease;border-radius:0 4px 4px 0}
+.cheer-banner{text-align:center;padding:10px;font-size:15px;font-weight:700;color:var(--blue);min-height:40px;transition:opacity .3s}
+.quiz-body{padding:16px 20px;max-width:700px;margin:0 auto;width:100%}
+.q-card{background:#fff;border-radius:var(--radius);padding:24px;margin-bottom:16px;box-shadow:var(--shadow)}
+.q-num{font-size:12px;color:var(--gray);margin-bottom:10px;font-weight:600}
+.q-text{font-size:17px;font-weight:700;line-height:1.6;color:var(--text)}
+.options{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.opt-btn{background:#fff;border:2px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px;font-family:'Tajawal',sans-serif;font-size:15px;font-weight:500;color:var(--text);cursor:pointer;text-align:right;transition:all .15s;display:flex;align-items:center;gap:12px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.opt-btn:hover:not(:disabled){border-color:var(--blue);background:var(--blue-light);transform:translateX(-2px)}
+.opt-btn:disabled{cursor:default}
+.opt-btn.selected{border-color:var(--blue);background:var(--blue-light)}
+.opt-btn .opt-letter{width:30px;height:30px;border-radius:50%;background:var(--gray-light);color:var(--gray);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.opt-btn.selected .opt-letter{background:var(--blue);color:#fff}
+.opt-btn.correct-reveal{border-color:var(--green);background:var(--green-light)}
+.opt-btn.correct-reveal .opt-letter{background:var(--green);color:#fff}
+.opt-btn.wrong-reveal{border-color:var(--red);background:var(--red-light)}
+.opt-btn.wrong-reveal .opt-letter{background:var(--red);color:#fff}
+.auto-bar-wrap{height:4px;background:var(--border);border-radius:99px;margin-bottom:16px;overflow:hidden;display:none}
+.auto-bar{height:100%;background:var(--blue);border-radius:99px;width:0%}
+.auto-bar.run{animation:fillbar 1.5s linear forwards}
+@keyframes fillbar{to{width:100%}}
+ 
+/* RESULT */
+#result-screen{background:linear-gradient(160deg,#1a1a2e 0%,#0f3460 100%);align-items:center;justify-content:flex-start;padding:20px}
+.result-inner{max-width:600px;width:100%;margin:0 auto}
+.result-header-card{background:#fff;border-radius:24px;padding:32px;text-align:center;margin-bottom:16px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.result-score-circle{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#1a56db,#7c3aed);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 25px rgba(26,86,219,.4)}
+.result-score-num{font-size:36px;font-weight:800;color:#fff;line-height:1}
+.result-score-denom{font-size:14px;color:rgba(255,255,255,.7)}
+.result-grade{font-size:22px;font-weight:800;margin-bottom:8px}
+.result-stats{font-size:14px;color:var(--gray);margin-bottom:16px}
+.result-msg{font-size:15px;color:var(--text2);line-height:1.7;background:var(--gray-light);border-radius:var(--radius-sm);padding:16px}
+.weak-card{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:16px;border-right:4px solid var(--gold)}
+.weak-card-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.weak-item{font-size:14px;color:var(--text2);margin:6px 0;display:flex;align-items:flex-start;gap:8px}
+.weak-item::before{content:'⚠️';font-size:14px;flex-shrink:0;margin-top:1px}
+.wrong-review-card{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.wrong-review-title{font-size:15px;font-weight:700;margin-bottom:16px;color:var(--text)}
+.wrong-q-item{border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:18px}
+.wrong-q-item:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.wrong-q-text{font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px}
+.wrong-q-your{font-size:13px;color:var(--red);margin-bottom:4px}
+.wrong-q-correct{font-size:13px;color:var(--green);margin-bottom:6px}
+.wrong-q-when{font-size:13px;color:#7c3aed;margin-bottom:8px;background:#f5f3ff;border-radius:6px;padding:8px 12px;border-right:3px solid #7c3aed}
+.wrong-q-exp{background:#f0f4ff;border-radius:var(--radius-sm);padding:10px;font-size:13px;line-height:1.7;color:var(--text2)}
+.exp-en{color:#1a56db;font-weight:600;margin-bottom:4px}
+.exp-ar{color:#374151}
+.result-actions{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.action-btn{padding:14px;border-radius:var(--radius-sm);font-family:'Tajawal',sans-serif;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:opacity .2s}
+.action-btn.primary{background:linear-gradient(135deg,#1a56db,#7c3aed);color:#fff}
+.action-btn.secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.action-btn:hover{opacity:.9}
+.upload-input{display:none}
+ 
+/* CHALLENGE SCREEN */
+#challenge-screen{background:linear-gradient(160deg,#0a0a1a 0%,#1a0a2e 50%,#0a1a3e 100%);align-items:center;justify-content:flex-start;padding:20px}
+.challenge-inner{max-width:700px;width:100%;margin:0 auto}
+.challenge-header{text-align:center;padding:30px 20px;position:relative;z-index:1}
+.challenge-trophy{font-size:60px;margin-bottom:16px;display:block}
+.challenge-title{font-size:26px;font-weight:800;color:#fff;margin-bottom:8px}
+.challenge-sub{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:20px;line-height:1.7}
+.prize-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;padding:10px 24px;border-radius:99px;font-size:16px;font-weight:800;margin-bottom:24px;box-shadow:0 4px 20px rgba(245,158,11,.4)}
+.challenge-rules{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:20px;margin-bottom:24px;text-align:right}
+.challenge-rules h3{color:#f59e0b;font-size:15px;font-weight:800;margin-bottom:12px}
+.challenge-rules li{color:rgba(255,255,255,.8);font-size:13px;margin-bottom:8px;padding-right:16px;position:relative;line-height:1.6}
+.challenge-rules li::before{content:'◆';position:absolute;right:0;color:#f59e0b;font-size:10px;top:3px}
+.start-challenge-btn{width:100%;padding:18px;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;border:none;border-radius:var(--radius);font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;cursor:pointer;box-shadow:0 4px 20px rgba(245,158,11,.4);transition:opacity .2s}
+.start-challenge-btn:hover{opacity:.9}
+.back-from-challenge{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:12px;border-radius:var(--radius-sm);font-family:'Tajawal',sans-serif;font-size:14px;font-weight:600;cursor:pointer;width:100%;margin-top:10px}
+ 
+/* CHALLENGE QUIZ */
+#challenge-quiz-screen{background:#0a0a1a}
+.cq-topbar{background:linear-gradient(135deg,#1a0a2e,#0a1a3e);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:2px solid #f59e0b}
+.cq-badge{background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;padding:6px 14px;border-radius:99px;font-size:13px;font-weight:800}
+.cq-body{padding:16px 20px;max-width:700px;margin:0 auto;width:100%}
+.cq-card{background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid rgba(245,158,11,.3);border-radius:var(--radius);padding:24px;margin-bottom:16px;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.cq-num{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:10px;font-weight:600}
+.cq-type-badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11px;font-weight:700;margin-bottom:8px}
+.cq-type-tf{background:rgba(245,158,11,.2);color:#f59e0b;border:1px solid rgba(245,158,11,.3)}
+.cq-type-mc{background:rgba(26,86,219,.2);color:#60a5fa;border:1px solid rgba(26,86,219,.3)}
+.cq-text{font-size:16px;font-weight:700;line-height:1.6;color:#fff}
+.cq-opts{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.cq-opt{background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.15);border-radius:var(--radius-sm);padding:14px 18px;font-family:'Tajawal',sans-serif;font-size:14px;font-weight:500;color:#fff;cursor:pointer;text-align:right;transition:all .15s;display:flex;align-items:center;gap:12px}
+.cq-opt:hover:not(:disabled){border-color:#f59e0b;background:rgba(245,158,11,.1)}
+.cq-opt:disabled{cursor:default}
+.cq-opt .opt-letter{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.cq-opt.correct-reveal{border-color:#10b981;background:rgba(16,185,129,.15)}
+.cq-opt.correct-reveal .opt-letter{background:#10b981;color:#fff}
+.cq-opt.wrong-reveal{border-color:#ef4444;background:rgba(239,68,68,.15)}
+.cq-opt.wrong-reveal .opt-letter{background:#ef4444;color:#fff}
+.cq-tf-btns{display:flex;gap:12px;margin-bottom:20px}
+.cq-tf-btn{flex:1;padding:18px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.15);border-radius:var(--radius-sm);font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;color:#fff;cursor:pointer;transition:all .15s;text-align:center}
+.cq-tf-btn:hover:not(:disabled){border-color:#f59e0b;background:rgba(245,158,11,.1)}
+.cq-tf-btn.true-btn{border-color:rgba(16,185,129,.4)}
+.cq-tf-btn.false-btn{border-color:rgba(239,68,68,.4)}
+.cq-tf-btn.correct-reveal{border-color:#10b981;background:rgba(16,185,129,.2);color:#10b981}
+.cq-tf-btn.wrong-reveal{border-color:#ef4444;background:rgba(239,68,68,.2);color:#ef4444}
+.cq-tf-btn:disabled{cursor:default}
+.cq-progress{height:4px;background:rgba(255,255,255,.1);position:sticky;top:72px;z-index:99}
+.cq-progress-bar{height:100%;background:linear-gradient(90deg,#f59e0b,#ef4444);transition:width .4s ease}
+.cq-cheer{text-align:center;padding:8px;font-size:14px;font-weight:700;color:#f59e0b;min-height:36px}
+ 
+/* CHALLENGE RESULT */
+#challenge-result-screen{background:linear-gradient(160deg,#0a0a1a 0%,#1a0a2e 100%);align-items:center;justify-content:flex-start;padding:20px}
+.cr-inner{max-width:600px;width:100%;margin:0 auto}
+.cr-card{background:#fff;border-radius:24px;padding:32px;text-align:center;margin-bottom:16px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.cr-circle{width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#ef4444);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 25px rgba(245,158,11,.5)}
+.cr-score-num{font-size:40px;font-weight:800;color:#fff;line-height:1}
+.cr-score-denom{font-size:14px;color:rgba(255,255,255,.8)}
+.cr-title{font-size:22px;font-weight:800;margin-bottom:8px;color:var(--text)}
+.cr-stats{font-size:14px;color:var(--gray);margin-bottom:16px}
+.cr-msg{font-size:14px;color:var(--text2);line-height:1.7;background:var(--gray-light);border-radius:var(--radius-sm);padding:16px;margin-bottom:0}
+.cr-wa-card{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:16px;text-align:center;border:2px solid #25d366}
+.cr-wa-title{font-size:16px;font-weight:800;color:var(--text);margin-bottom:8px}
+.cr-wa-sub{font-size:13px;color:var(--gray);margin-bottom:16px;line-height:1.6}
+.cr-wa-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#25d366;color:#fff;border:none;border-radius:var(--radius-sm);font-family:'Tajawal',sans-serif;font-size:16px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 4px 15px rgba(37,211,102,.4)}
+.cr-wrong-card{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.cr-wrong-title{font-size:15px;font-weight:700;margin-bottom:16px;color:var(--text)}
+.cr-wrong-item{border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:14px}
+.cr-wrong-item:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.cr-wrong-q{font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px}
+.cr-wrong-yours{font-size:12px;color:var(--red);margin-bottom:3px}
+.cr-wrong-correct{font-size:12px;color:var(--green)}
+.cr-actions{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.cr-btn{padding:14px;border-radius:var(--radius-sm);font-family:'Tajawal',sans-serif;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:opacity .2s}
+.cr-btn.primary{background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff}
+.cr-btn.secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.cr-btn:hover{opacity:.9}
+ 
+@media(max-width:480px){.scholars-grid{grid-template-columns:repeat(2,1fr)}.levels-grid{grid-template-columns:1fr}.home-title{font-size:20px}}
+</style>
+</head>
+<body>
+ 
+<!-- SUPPORT BTN -->
+<a class="support-btn-fixed" href="https://wa.me/201067622425" target="_blank">
+  <span>💬</span> دعم وإستفسارات
+</a>
+ 
+<!-- LOGIN -->
+<div id="login-screen" class="screen active">
+  <div class="login-box">
+    <div class="login-logo">📚</div>
+    <div class="login-title">نصوص في التخطيط الاجتماعي</div>
+    <div class="login-sub">فرقة ثالثة خدمة اجتماعية</div>
+    <div class="field-row">
+      <label class="field-label">الاسم </label>
+      <input class="field-input" id="name-input" type="text" placeholder="الاسم الأول ">
+    </div>
+    <div class="field-row">
+      <label class="field-label">كود الاشتراك</label>
+      <input class="field-input code-style" id="code-input" type="text" placeholder="أدخل الكود" maxlength="9" oninput="this.value=this.value.toUpperCase()">
+    </div>
+    <div class="login-err" id="login-err"></div>
+    <button class="login-btn" onclick="doLogin()">دخول المنصة ←</button>
+    <div class="telegram-section">
+      <p>مش مشترك لحد دلوقتي؟</p>
+      <a class="telegram-btn" href="https://t.me/Jskslwkggialalkbhi_bot" target="_blank">✈️ اشترك عبر تيليجرام</a>
+    </div>
+  </div>
+</div>
+ 
+<!-- HOME -->
+<div id="home-screen" class="screen">
+  <div class="home-hero">
+    <div class="creator-section">
+      <div class="creator-label">CREATED BY</div>
+      <div class="creator-avatar" id="creator-avatar" onclick="document.getElementById('creator-upload').click()" title="اضغط لرفع الصورة">
+        <div class="creator-avatar-placeholder" id="creator-placeholder"><span>📸</span><small>صورة</small></div>
+        <img id="creator-img" style="display:none;position:absolute;inset:0" alt="">
+      </div>
+      <input type="file" id="creator-upload" class="upload-input" accept="image/*" onchange="uploadCreator(event)">
+      <div class="creator-name">م /ذياد خالد</div>
+      <div class="creator-info">نصوص في التخطيط الاجتماعي</div>
+      <div class="creator-info" style="margin-top:3px">كلية الخدمة الاجتماعية — الفرقة الثالثة</div>
+    </div>
+ 
+    <div class="home-title">نصوص في التخطيط الاجتماعي</div>
+    <div class="home-sub">نماذج العمل المجتمعي — Community Work Models</div>
+    <div class="home-badge">كلية الخدمة الاجتماعية | الفرقة الثالثة</div>
+ 
+    <div class="leaders-section">
+      <div class="leaders-label">LEADERS</div>
+      <div class="scholars-grid">
+        <div class="scholar-card" onclick="document.getElementById('s-upload-0').click()">
+          <div class="scholar-img" id="s-img-0"><span>📸</span></div>
+          <input type="file" id="s-upload-0" class="upload-input" accept="image/*" onchange="uploadScholar(event,0)">
+          <div class="scholar-name" id="leader-name-0">اسماء عصام ربيع</div>
+          <div class="scholar-role">Leader:</div>
+        </div>
+        <div class="scholar-card" onclick="document.getElementById('s-upload-1').click()">
+          <div class="scholar-img" id="s-img-1"><span>📸</span></div>
+          <input type="file" id="s-upload-1" class="upload-input" accept="image/*" onchange="uploadScholar(event,1)">
+          <div class="scholar-name" id="leader-name-1">شروق رضا عبد الحميد</div>
+          <div class="scholar-role">Leader</div>
+        </div>
+        <div class="scholar-card" onclick="document.getElementById('s-upload-2').click()">
+          <div class="scholar-img" id="s-img-2"><span>📸</span></div>
+          <input type="file" id="s-upload-2" class="upload-input" accept="image/*" onchange="uploadScholar(event,2)">
+          <div class="scholar-name" id="leader-name-2">ツ】ઇ需 ﭴۆ ﻣ̝̚ﺻٍژ 需ઇ【ツ</div>
+          <div class="scholar-role">Leader</div>
+        </div>
+        <div class="scholar-card" onclick="document.getElementById('s-upload-3').click()">
+          <div class="scholar-img" id="s-img-3"><span>📸</span></div>
+          <input type="file" id="s-upload-3" class="upload-input" accept="image/*" onchange="uploadScholar(event,3)">
+          <div class="scholar-name" id="leader-name-3">ساره وائل جمعه</div>
+          <div class="scholar-role">Leader</div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="home-content">
+    <div style="background:#fff;border-radius:12px;padding:14px 18px;margin-bottom:20px;border-right:4px solid var(--blue);font-size:14px;color:var(--text2);line-height:1.7" id="welcome-msg"></div>
+    <div class="section-title">اختار مستواك</div>
+    <div class="levels-grid" id="levels-grid"></div>
+    <button class="start-big-btn" id="start-btn" onclick="startLevel()">ابدأ الاختبار 🚀</button>
+    <div id="challenge-hint" style="display:none;text-align:center;font-size:13px;color:var(--gray);margin-bottom:8px;padding:10px;background:#fff;border-radius:8px;border:1px dashed var(--border)"></div>
+    <button class="challenge-btn" id="challenge-nav-btn" onclick="showChallengeInfo()">🏆 مسابقة المكافأة — شارك وفوز!</button>
+  </div>
+</div>
+ 
+<!-- QUIZ -->
+<div id="quiz-screen" class="screen">
+  <div class="quiz-topbar">
+    <button class="quiz-back" onclick="confirmBack()">✕</button>
+    <div class="quiz-top-info">
+      <div class="quiz-level-name" id="qz-level">مقبول</div>
+      <div class="quiz-counter" id="qz-counter">سؤال 1 من 50</div>
+    </div>
+    <div class="quiz-score-top"><span id="qz-correct">0</span> ✓</div>
+  </div>
+  <div class="progress-track"><div class="progress-bar" id="progress-bar" style="width:2%"></div></div>
+  <div class="cheer-banner" id="cheer-banner"></div>
+  <div class="quiz-body">
+    <div class="q-card">
+      <div class="q-num" id="q-num"></div>
+      <div class="q-text" id="q-text"></div>
+    </div>
+    <div class="options" id="options"></div>
+    <div class="auto-bar-wrap" id="auto-bar-wrap"><div class="auto-bar" id="auto-bar"></div></div>
+  </div>
+</div>
+ 
+<!-- RESULT -->
+<div id="result-screen" class="screen">
+  <div class="result-inner">
+    <div class="result-header-card">
+      <div class="result-score-circle">
+        <div class="result-score-num" id="r-score">0</div>
+        <div class="result-score-denom">من 10</div>
+      </div>
+      <div class="result-grade" id="r-grade"></div>
+      <div class="result-stats" id="r-stats"></div>
+      <div class="result-msg" id="r-msg"></div>
+    </div>
+    <div class="weak-card" id="weak-card" style="display:none">
+      <div class="weak-card-title">⚠️ ركّز على الموضوعات دي قبل ما تتقدم:</div>
+      <div id="weak-list"></div>
+    </div>
+    <div class="wrong-review-card" id="wrong-review-card" style="display:none">
+      <div class="wrong-review-title">📋 مراجعة الأسئلة الغلط — الصواب وليه؟</div>
+      <div id="wrong-list"></div>
+    </div>
+    <div class="result-actions">
+      <button class="action-btn primary" id="r-next-btn" onclick="goToNextLevel()">الانتقال للمستوى التالي 🚀</button>
+      <button class="action-btn secondary" onclick="retryLevel()">إعادة المستوى ده 🔄</button>
+      <button class="action-btn secondary" onclick="goHome()">← العودة للرئيسية</button>
+    </div>
+  </div>
+</div>
+ 
+<!-- CHALLENGE INFO -->
+<div id="challenge-screen" class="screen">
+  <div class="challenge-inner">
+    <div class="challenge-header">
+      <span class="challenge-trophy">🏆</span>
+      <div class="challenge-title">مسابقة المكافأة المادية</div>
+      <div class="challenge-sub">أثبت إنك الأفضل وفوز بمكافأة حقيقية!</div>
+      <div class="prize-badge">💰 مكافأة مادية للفائز</div>
+    </div>
+    <div class="challenge-rules">
+      <h3>📋 قواعد المسابقة</h3>
+      <ul style="list-style:none;padding:0">
+        <li>المسابقة بتتكون من 60 سؤال — 30 صح/غلط + 30 اختياري صعب</li>
+        <li>الأسئلة من مستوى متقدم جداً (Advanced)</li>
+        <li>لو قفّلت كل الأسئلة بدون ما تغلط كتير هيظهرلك زرار التواصل</li>
+        <li>ابعت سكرين شوت لإجاباتك على الواتساب</li>
+        <li>المكافأة بتتوزع عن طريق الكاش</li>
+        <li>نتيجتك الحقيقية هي اللي بتحدد فوزك</li>
+      </ul>
+    </div>
+    <button class="start-challenge-btn" onclick="startChallenge()">ابدأ المسابقة 🚀</button>
+    <button class="back-from-challenge" onclick="goHome()">← رجوع للرئيسية</button>
+  </div>
+</div>
+ 
+<!-- CHALLENGE QUIZ -->
+<div id="challenge-quiz-screen" class="screen">
+  <div class="cq-topbar">
+    <button class="quiz-back" style="color:#fff" onclick="confirmBackChallenge()">✕</button>
+    <div class="quiz-top-info">
+      <div class="cq-badge">🏆 المسابقة</div>
+      <div style="font-family:'Tajawal';font-size:12px;color:rgba(255,255,255,.5);margin-top:4px" id="cq-counter">سؤال 1 من 60</div>
+    </div>
+    <div class="quiz-score-top"><span id="cq-correct">0</span> ✓</div>
+  </div>
+  <div class="cq-progress"><div class="cq-progress-bar" id="cq-progress-bar" style="width:2%"></div></div>
+  <div class="cq-cheer" id="cq-cheer"></div>
+  <div class="cq-body">
+    <div class="cq-card">
+      <div class="cq-num" id="cq-num"></div>
+      <div id="cq-type-badge"></div>
+      <div class="cq-text" id="cq-text"></div>
+    </div>
+    <div id="cq-answers"></div>
+    <div class="auto-bar-wrap" id="cq-auto-bar-wrap"><div class="auto-bar" id="cq-auto-bar"></div></div>
+  </div>
+</div>
+ 
+<!-- CHALLENGE RESULT -->
+<div id="challenge-result-screen" class="screen">
+  <div class="cr-inner">
+    <div class="cr-card">
+      <div class="cr-circle">
+        <div class="cr-score-num" id="cr-score">0</div>
+        <div class="cr-score-denom">من 10</div>
+      </div>
+      <div class="cr-title" id="cr-title"></div>
+      <div class="cr-stats" id="cr-stats"></div>
+      <div class="cr-msg" id="cr-msg"></div>
+    </div>
+    <div class="cr-wa-card" id="cr-wa-card" style="display:none">
+      <div class="cr-wa-title">🎉 مبروك! أنت مؤهل للمكافأة</div>
+      <div class="cr-wa-sub">ابعت سكرين شوت لنتيجتك على الواتساب وهتتوصلك المكافأة عن طريق الكاش</div>
+      <a class="cr-wa-btn" id="cr-wa-btn" href="#" target="_blank">📱 تواصل على الواتساب</a>
+    </div>
+    <div class="cr-wrong-card" id="cr-wrong-card" style="display:none">
+      <div class="cr-wrong-title">📋 الأسئلة اللي غلطتها</div>
+      <div id="cr-wrong-list"></div>
+    </div>
+    <div class="cr-actions">
+      <button class="cr-btn primary" onclick="startChallenge()">إعادة المسابقة 🔄</button>
+      <button class="cr-btn secondary" onclick="goHome()">← العودة للرئيسية</button>
+    </div>
+  </div>
+</div>
+ 
+<script>
+// ===== OBFUSCATED CODES =====
+var _c=(function(){var r=[   " !040!OJX","!DWB?759","!170SAS=","!180=GWP","!213^*BUO","!287CAI#","!345OLQ!","!368*USQ","!402VUG%","!413OXB$","!899DOD^","!=500LXE","!=NWU^383","!?#MQN734","!@818BSN","!EVG=265","!FME^236","!OQE421@","!PMK112!","!QBW?621","!WEM@173","!^YYE~616","!^ZTQ674?","!&213XBL","#!CHP783","##?280IUN","#$148QEZ","#967#TCK","#+!779MEV","#++YZH668","#001~ERP","#253LTI=","#372QST!","#795XWZ=#","#868*VBK","#915STO$","#916TRM=+","#=&IDJ065","#=019OYJ=","#?+532TOE","#?877LMC&","#?=082AVJ","#?EHC&861","#@%DPU353","#@%SCM764","#@817=NEK","#@@799OMU","#DHL476+^","#FQH966+","#FUQ923?","#GHK+569","#PUJ+#472","#YED=842","#YQB859!?","#@483ILF","$!RUF608","$HMG~128","$TFY071","$%!HCI798","$%861VRG@","${appText}531PTB!","$+@828RUZ","$171AEL","$192%XCR","$348PSS!+","$622UNQ?+","$666#+VED","$728%UWS","$740%^GPB","$=#UNQ582","$?166=JVZ","$?GRB~806","$BBZ254!!","$ESR@$181","$JCK!442","$JJM452*#","$LDV+^453","$^%343DRG","$^%IQY448","$%DGQ732","$108VBV","$~UKW327$","%#NXA181","%#UFX+987","%$324!EVG","%&$860MLP","%$063UMN","%782DQM","%?290HSO","%+134MNT=","%030OVW^@","%198=?MKX","%659#+GML","%695JSR#","%711WPV%&","%729KXI!+","%957^~TQQ","%=!UMB679","%?720%HMM","%@?390PMY","%GPB*754","%INX041","%KTP??180","%ONW993*","%SEY!477","%SUZ154%","%TAM187!","%YNI171^%","%ZRX&226","%$210CER","%&MWW065","%~YXU471","&!MEA852","&!SYU$421","&#&670CKL","&#?254SEW","&#FFW#600","&#IYN597?","&#~237GZF","&$630HMF","&%JKR766","&%LZP@579","&%XGH540#","&&325ISU","&701HRG?","&*UAF607","&+767*TXZ","&+REF~229","&+SCS!720","&039DYR%","&159$?HCT","&231UNS!","&=&KIX877","&=HQT403","&=^SLE064","&?250RTV#","&??IRT851","&@OYY367","&@FDK626#","&CCE305^","&CKE826@#","&DVW#379","&GVQ950#","&IPH375#","&OAP075^","&TOK?513","&738SGJ","!445GGA#","#847NIC","$312URC","$255@ZMX","$734*EBE","%+684BPO","%870!HRN","%877DTI","%OEH630!","&MUX=275","&^576QQS","495XGY$","661MGE","+557SNQ","+SVT471^","*068=!AIA","*230BNM%","*443=!XXV","*502OSK!","*701ZKL!+","*924~UZS","*971UST","*983?BWR","*995XCZ$","*=833~YUL","=VQA768$","=XFX050=","?ORG173","?WPE117+","@?992EES","@ARM321&","@055QHC","GCQ!!830","*WDQ531?","*WJX+*988","^906*NJJ","+!425RIU","+!VYX807=","+%765!QHP","+&!UPY636","+&#794MFQ","+&FSD090","++ZZR704","+@009DVU","+JZD438+","+^790AVB","+046~PGH","+124KBI!","+379HWT?","+516UUW*","+550HMA$","+574XWS$","+968QHQ@+","+998^&EIC","+=099GUT","+=DVV%970","+=ZKJ415","+@$897HML","+@WND325","+DFU818~","+PUE%607","+QHJ?536","+QQT504&=","+RHS438*+","+YMU408*","+^439ZCS&","+^DCG&832","+^VIV993^","+?AOM495","005#$TQX*","005*UIE%","006?#%FKL","019!+IHH","019#@^CIS","023=$!TWF","034KQG#*=","034UNU^??","048&@JMZ!","059EJO@","067DDT=&=","067LTZ$$^","068%%QEB","070#?+KLH","071@BRL+","077=$LCA","096!=HUE*","100==$PVB","107GUN+!","112#SJT@","113!!EWY&","122?YNN^","126TET?^","137ATE$#!","143TVU$%!","147$WCV$?","148$=^YAL","150+VYD==","166DSV+@","169%NMK~","172*KYE?","175$QCB&","189%HRO&","191&!RGQ~","200DAR$$","206KWX%^=","212YLG^!+","214^ZCI?","218$VVN@","223*FNO&","227%$&GEN","234=$^KOE","236=!FKF&","240#!OGJ^","242=TFD#$","243=#@AXI","246QVL&?%","249PQR*","252!RWI%","254*JMM!^","257UKU+?","273YKI?%","277!!@NEB","290BIH^=","302@ACO","315ZMF=#+","317$CDZ~","329#HFQ~?","329@EMG?","333+~*CIP","334*JMF+","338$&$TPJ","338+YWL+&","344~MBU","352TOT&&","359GAL$@#","362BZU#^","362WDP+&~","363JQT!","365=MNI#!","368WRP$","368^SCQ*","372+%ZUE","382~=QWF","383RWE&#?","386~@KEQ=","387+^YRK","387?=MUY","389$!$ZBK","400@KER#","406@=VBR","406HEK?=%","406MQC+#^","408QHM%@+","412?&RYZ","412KLR=","413!AHA%","417PFH!!","420~EHL&!","426XLX^!@","427KJY^?#","433$!NZH","433GXC%#","435=!@ZLY","446^PHK","450!PWG^","451+FPC!","453UHH^^=","457^+#BZK","459+NPQ!","459^=+BRC","464$OWD%$","464TGL&^&","465!VUY*#","466@!ZUU","467!&XNY?","467@!%EYW","469@^QGT","469TQJ$","473?QDJ","476+UZI%+","479WTG@@","496OZX^&","498@XXF=","505WVD^!%","506*@UAP","510MJV@=^","511+#@MBV","511WXU%!?","512^^TZS","514#+CDJ","515*OPX$=","525$?OPH","533&+%AEY","535WWB#","539=&SCA","539SLW#%","550%QUV!+","551=CDZ","552FLW?=","556#MEU$+","576!#XWO#","579QAS%=","586$!=TKF","594!FSD$","594+!!WDW","595#QMX=","596?NYP?","599@#MKS","604??&HSW","631?&AAB","643!@XRS^","643$BVD!","643SHJ##=","644MYR&","644^IGR^","651%+=PIQ","654!EBY@?","661#GJW?","661*GMD^","661+BXM&","661IGK$@","664^+QVH","666$XUR$%","671LDJ+^&","673=EMX","673@LAY?","676?IVZ^","691%$AXN","695YCH!@","697%RWG","698OSY$","704VPF?!","706AJZ=!","717#&#OAB","725$@#ZKX","726GXE*@","729+$NMN+","742#@$LMI","742QHX?%","743*+TEL","749&&ZIQ","752*?QSK","761%VNK%","762$=ERB","775@=^CZP","785@EKF^","802ZBL*%=","803@OXS*#","804TSM^&","811#TTS?","815#%?JCK","821+!NYV","822+IOS+^","822^%!IDB","824=SWU@","849?@QPQ","855%*EIF^","859@!YVP","866$?~WXS","868KMK%#^","885#WSK!","886^&HVS$","887JXR++#","894$~FJA","894PJE!++","902?$RLN","906%=BAM","908+OQX","915^!MBC","930#?&XCR","930@=@LCV","930CAB!!%","931ERW=?","968=FBH^","970@!^XAU","975##UFU~","979FRT!=","986=+ZNX","988QWB@&","=!973*NOQ","=#PSM074&","=$306AVH@","=$@472VFI","=$204QMO","=%UQD035+","=&986JUZ","=*575YHT","=*747UHE","=*VLO533","=*VTR984","=+$VJM929","=+XMH487#","=126UNY=^","=520MTR+","=621OUZ^+","=732PKK!@","=749+!PYR","=939YFP${appText}","==736FQC=","==QPA157","=?^212BPM","=@@600USK","=@@UBW364","=@EDE300^","=DIN016","=JUQ744&","=NXQ=185","=UZD#334","=XGT270^","=PZF757%","?!+SJO431","?!KYX248","?!SLD*143","?#KDE101","?#NMY953","?#NRS747","?$961FLK*","?$UIP520@","?%!968JDD","?%996MYA","?&OCE&018","?OBW478","?119TLK%%","?403LJB","?497ZSV*","?602EUQ^+","?707^FQP","?=FDK179&","??168&SCA","?@?CLW411","?@EDY860","?@^NFH743","?HBL661@","?ICB142++","?KZW!+374","?OPZ709!","?^OUF779^","?^ZQC&990","@!FWE@495","@!GTD757","@!TPA551","@#FDN006","@#^TCE496","@$186?XGJ","@&WYV071","@DJG834","@EZY402","@QWV=420","@+#MAJ214","@++249XBS","@+698#UOG","@+JGS851","@+JWV788^","@025?TXU","@129%LGS","@135%NDW","@619UTH?","@631@HKL","@745@PVI","@825PJB!","@865JEZ","@=!269GHR","@=049HBI^","@?+161DIL","@?611ZLT","@?@AXF659","@?DJB687","@@YCC685","@@^950RCD","@BXO=055","@GNZ621+?","@NVI=198","@PKS032#?","@SNZ686&","@SWJ978+","@UJV620!","@VRA=^284","@VUX474%!","@WDB!392","@YYY#038","@^629NTZ","@^HCK*131","@^NIH#677","AQH767++%","AYP244@#@","BHJ?#100","BIT!+%384","BQE@=645^","BSA&^473","BWD@780!","CIB370^^","CKF181?=","CKS#++822","CMR+951+#","CNQ&+991","COA^+715","COK?992%?","CQW&*208","CSY%#587","CTF^+290","CVT417==","CYJ254&=","DCT288!@@","DCX853$#","DHT922=?@","DHU+@?839","DIG@#814","DLV991@^@","DSZ&408?+","DZE?065&&","EAU@773^","EEY@974&!","EGD330!","EHG384&=","EHR&@&577","EKA~729$=","EKP$#$890","EPF981@#","EPY~#588+","EXS!=951","FDV706?&","FJI931?^&","FOH$#%093","FOK^=782","FQQ193=%=","FSP718^%","FVR$#853","GAB~@250","GBT@095%","GDK?454^","GHD!?&269","GHJ@314^","GNK697==!","GOB380!@#","GOW098$+","GUC!#&253","GZL#%858","HFZ^@@870","HIF^&%477","HJP!574","HKW468=","HLD855$!","HNO329@!$","HNR066#!+","HVB!423?","HYD497#=+","IDC?+652","IKU~648@","INT^?474","ITA?742^","IZL?^919","JCI767^%","JCR+#*130","JFA&224%","JFL^611@#","JPX!&969@","JRS#510+","JXZ573~&","KCK127$%","KEY!620~","KMD!#917","KPD#+046","KZI~617&@","LBM342!$","LEU486%+","LFU?@@280","LGO#&749","LQR?662%!","LSL763~^","LTO+!989","LXL112+=&","LYZ!$%410","MBB235&=@","MBV889?+#","MEG881%@","MIX$=439","MJZ$!^594","MMC%995$","MNN?784%","MPP%^358","MZY818?","NDR848?$","NFV@#901!","NJF$495#","NQC?400+@","NRE+037?","NZP278+%","OBN@%696","OBS%547%","OCP083#^^","OEN^+703","OET@!$624","OFU?#121","OIL&560@","OKH#332@","OPX150%=&","OTX~130","PJB%+%130","PMA#561*","PME512^","PPC$457%@","PUU657&@&","QBZ%!+225","QEM=347&","QFC141$?$","QIQ~+=137","QIU930?&","QRR~672+","QTU@&618","QUY!840$","QUZ^#?247","QXO&407%","RDH^897%","RMS@520!","RQH193#","RTO#@193","RWQ193^&&","RXN=#957^","SBQ688!%","SCY%$998+","SFF754@=","SFJ^#032","SGT^$=795","SIA@!370","SKK843=!","SNE&476~!","TCW083%&!","TGQ261=^+","THA$%476","TIC^^832","TKU092~#","TQF*279!@","TXO515+@","TZQ!534%","UDB#067@","UEX@385@","UFO?709$","UJN545^=","UMU^%963","VBX*&%613","VCQ*255=!","VLK!812+","VPR^!!598","VXB223&+","WAR?270","WKY!192$","WZC^=305^","XBL$?809~","XBP!344$^","XCM+$132","XDC405$@?","XER=#388","XKF%=^966","XKL580&=&","XSI462&@!","XTG@?051","XVP+#267","XWD130!@","XZJ349&^^","XZM?265#+","YGN427#!","YMO@?319","YNZ612#+^","YVK^+=420","YWH?!879=","YZK820^?","ZDC@$#576","ZED806","ZIH945^&","ZIH$687","ZKR607#@?","ZNO+@?971","ZQE&#954","ZTW@356=","ZUP993@%","ZXR+842#","^!693ACZ","^#VNK193?","^$*EAT804","^$ABW125","^%+ZHT392","^&875!VOP","^&IER356#","^*377%JQH","^+652SCQ","^+^WGO022","^097=?XHF","^260ERT$","^345YCK&!","^348@&TKK","^651SFU%","^683LEP","^858&JMQ","^=751ELZ","^=YEV%422","^?774KTV","^?VFP728","^@410+SWC","^@IZO057","^FZE=428","^IOY660&^","^MVC+844","^QUY&433","^RTZ~382","^UOK%+514","^WKJ541#&","^^246=DFV","^&159AHC","^~392$WIF","!GBP526","#+658RTT","#479+JLD","#IUP330","${appText}193JTI","%EPR#881","&536NGP","&^ZSG618","*RIJ~463","+019+ESH","+AFK213","~200*FFY","~312?%VGQ","~312DHF&","~459XNY#^","~477YKO#","~755#SAQ","=NXJ*436","?397CFK@","@397IGF","@?978UKS","~BNU&!996","~EOF%^892","~KQZ+110","~MSB356*","~QBR*735","~RTG950*","~SLA802?","^606HWI&","~FRG012","~NYS456!"
+];
+return r;})();
+ 
+function _chk(c){return _c.indexOf(c)>=0;}
+ 
+// ===== FIREBASE GLOBAL ONE-TIME CODE SYSTEM =====// كل كود بيتحرق على السيرفر فوراً — من أي جهاز في العالم
+ 
+var FIREBASE_URL='https://cwp-platform-default-rtdb.firebaseio.com';
+ 
+function _isUsedGlobal(code, callback){
+  var key=btoa(code).replace(/[^a-zA-Z0-9]/g,'_');
+  fetch(FIREBASE_URL+'/burned/'+key+'.json',{method:'GET'})
+  .then(function(r){return r.json();})
+  .then(function(data){callback(data!==null&&data!==false&&data!==undefined);})
+  .catch(function(){
+    try{var loc=JSON.parse(localStorage.getItem('cwp_burned')||'[]');callback(loc.indexOf(code)>=0);}
+    catch(e){callback(false);}
+  });
+}
+ 
+function _burnCode(code){
+  var key=btoa(code).replace(/[^a-zA-Z0-9]/g,'_');
+  fetch(FIREBASE_URL+'/burned/'+key+'.json',{
+    method:'PUT',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({burned:true,at:new Date().toISOString()})
+  }).catch(function(){});
+  try{
+    var loc=JSON.parse(localStorage.getItem('cwp_burned')||'[]');
+    if(loc.indexOf(code)<0){loc.push(code);localStorage.setItem('cwp_burned',JSON.stringify(loc));}
+  }catch(e){}
+}
+ 
+// STATE
+var userName='',currentLevel=0,currentQ=0,userAnswers=[],correctCount=0,levelScores=[null,null,null,null],levelUnlocked=[true,false,false,false],autoTimer=null,allLevelsComplete=false;
+var challengeQ=0,challengeAnswers=[],challengeCorrect=0,challengeTimer=null;
+ 
+const CHEERS_C=['أحسنت! 🎯','شاطر جداً! 💪','ممتاز! 🔥','برافو! ⭐','كده كده! 👏'];
+const CHEERS_W=['مش مشكلة 💡','روق، هتفهمها 😊','كل غلطة بتعلمك 📚'];
+ 
+// ===== LOGIN — Firebase Global One-Time Lock =====
+function doLogin(){
+  var nm=document.getElementById('name-input').value.trim();
+  var code=document.getElementById('code-input').value.trim();
+  var err=document.getElementById('login-err');
+  var btn=document.querySelector('.login-btn');
+ 
+  if(!nm){
+    err.textContent='❌ من فضلك ادخل اسمك الثنائي';
+    document.getElementById('name-input').classList.add('error');
+    setTimeout(()=>document.getElementById('name-input').classList.remove('error'),600);
+    return;
+  }
+ 
+  if(!_chk(code)){
+    err.textContent='❌ الكود ده مش صح. جرب تاني أو اشترك عبر تيليجرام.';
+    document.getElementById('code-input').classList.add('error');
+    setTimeout(()=>document.getElementById('code-input').classList.remove('error'),600);
+    return;
+  }
+ 
+  // جاري التحقق من السيرفر
+  btn.disabled=true;
+  btn.textContent='⏳ جاري التحقق...';
+  err.textContent='';
+ 
+  _isUsedGlobal(code, function(used){
+    btn.disabled=false;
+    btn.textContent='دخول المنصة ←';
+ 
+    if(used){
+      err.innerHTML='🔒 انتهت صلاحية الكود  نهائياً.<br><small style="color:#6b7280;font-size:12px">كل كود بيشتغل مرة واحدة فقط . لو في مشكلة تواصل معنا.</small>';
+      document.getElementById('code-input').classList.add('error');
+      setTimeout(()=>document.getElementById('code-input').classList.remove('error'),800);
+      return;
+    }
+ 
+    // ✅ حرق الكود على السيرفر فوراً
+    _burnCode(code);
+    userName=nm;
+    err.textContent='';
+    showScreen('home-screen');
+    renderHome();
+  });
+}
+ 
+document.getElementById('code-input').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
+document.getElementById('name-input').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
+ 
+// UPLOAD
+function uploadCreator(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=ev=>{document.getElementById('creator-placeholder').style.display='none';var i=document.getElementById('creator-img');i.src=ev.target.result;i.style.display='block';};r.readAsDataURL(f);}
+function uploadScholar(e,idx){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=ev=>{document.getElementById('s-img-'+idx).innerHTML='<img src="'+ev.target.result+'" alt="">';};r.readAsDataURL(f);}
+ 
+// HOME
+function renderHome(){
+  var nm=userName||'';
+  document.getElementById('welcome-msg').textContent='أهلاً وسهلاً بيك، '+nm+' 👋 — هنا منصة مراجعة مادة العمل المجتمعي. اختار مستواك وابدأ رحلتك نحو التفوق!';
+  var grid=document.getElementById('levels-grid');
+  grid.innerHTML='';
+  var NAMES=['مقبول','جيد','جيد جداً','ممتاز'],ICONS=['🌱','🌿','🌟','🏆'];
+  NAMES.forEach((name,i)=>{
+    var done=levelScores[i]!==null,locked=!levelUnlocked[i];
+    var card=document.createElement('div');
+    card.className='level-card lc-'+i+(locked?' locked':'')+(done?' done':'');
+    card.innerHTML='<div class="level-icon">'+ICONS[i]+'</div><div class="level-name">'+name+'</div><div class="level-qs">50 سؤال</div>'+(done?'<div class="level-score-badge">✓ '+levelScores[i].toFixed(1)+'/10</div>':'')+(locked?'<div class="lock-icon">🔒</div>':'');
+    if(!locked)card.onclick=()=>{document.querySelectorAll('.level-card').forEach(c=>c.classList.remove('selected'));card.classList.add('selected');currentLevel=i;document.getElementById('start-btn').textContent='ابدأ مستوى '+name+' 🚀';};
+    grid.appendChild(card);
+  });
+  currentLevel=levelUnlocked.lastIndexOf(true);
+  var fc=grid.children[Math.max(0,currentLevel)];if(fc)fc.classList.add('selected');
+  document.getElementById('start-btn').textContent='ابدأ مستوى '+NAMES[Math.max(0,currentLevel)]+' 🚀';
+  var allDone=levelScores[0]!==null&&levelScores[1]!==null&&levelScores[2]!==null&&levelScores[3]!==null;
+  var challengeBtn=document.getElementById('challenge-nav-btn');
+  challengeBtn.style.display=allDone?'block':'none';
+  if(!allDone){
+    var remaining=levelScores.filter(s=>s===null).length;
+    document.getElementById('challenge-hint').style.display='block';
+    document.getElementById('challenge-hint').textContent='🔒 أكمل باقي '+remaining+' مستوى/مستويات لفتح المسابقة';
+  }else{
+    document.getElementById('challenge-hint').style.display='none';
+  }
+}
+ 
+function startLevel(){if(!levelUnlocked[currentLevel])return;currentQ=0;userAnswers=new Array(50).fill(null);correctCount=0;showScreen('quiz-screen');renderQuestion();}
+ 
+// QUIZ DATA
+var ALL_Q=[
+  // LEVEL 1
+  {q:"According to Popple, what is one of the main problems facing community work?",opts:["It has no single definition","It lacks funding","It has too many workers","It only focuses on youth"],ans:0,topic:"Definition of Community Work",exp:{en:"Popple said community work has no single definition and is often seen simply as a form of welfare work.",ar:"بوبل قال إن العمل المجتمعي مفيش له تعريف واحد — وده المشكلة الأساسية.",when:"اختار الإجابة دي لو الجملة بتحكي عن 'مشكلة رئيسية في العمل المجتمعي' أو 'انتقاد بوبل'."}},
+  {q:"Community work can be considered as what type of term?",opts:["Specific term","Umbrella term","Legal term","Medical term"],ans:1,topic:"Definition of Community Work",exp:{en:"Because it covers a wide range of activities, community work is called an 'umbrella term'.",ar:"مصطلح شامل (Umbrella term) — زي الشمسية بتغطي كل حاجة تحتها.",when:"اختار 'Umbrella term' لو السؤال بيتكلم عن إن العمل المجتمعي بيغطي أنشطة كتيرة."}},
+  {q:"Who said practitioners were accused of lacking direction?",opts:["Popple","Rothman","Thomas","Hartl"],ans:2,topic:"Definition of Community Work",exp:{en:"Thomas (1983) noted that practitioners were accused of lacking direction and certainty.",ar:"توماس (1983) هو اللي قال إن الممارسين اتاتهموا بعدم التوجيه.",when:"لو السؤال عن 'من قال أن الممارسين اتهموا بعدم التوجيه' الإجابة توماس."}},
+  {q:"What is Thomas's FIRST major aspect of community work?",opts:["Political responsibility","Communal coherence","Taking action on specific issues","Social planning"],ans:2,topic:"Thomas's Three Aspects",exp:{en:"Thomas's first aspect: helping people take action on specific issues of importance to them.",ar:"أول جانب: مساعدة الناس إنهم يتصرفوا في قضايا محددة مهمة ليهم.",when:"لو السؤال عن 'أول جانب عند توماس' — الإجابة دايماً 'اتخاذ إجراءات في قضايا محددة'."}},
+  {q:"What is Thomas's SECOND major aspect?",opts:["Communal coherence","Political responsibility","Service delivery","Leadership"],ans:1,topic:"Thomas's Three Aspects",exp:{en:"Thomas's second aspect is the development of political responsibility.",ar:"تاني جانب = تطوير المسؤولية السياسية.",when:"لو السؤال عن 'تاني جانب توماس' — المسؤولية السياسية."}},
+  {q:"What is Thomas's THIRD major aspect (1983)?",opts:["Economic development","Communal coherence","Resource allocation","Political action"],ans:1,topic:"Thomas's Three Aspects",exp:{en:"Thomas's third aspect is communal coherence — keeping the community united.",ar:"تالت جانب = التماسك الجماعي — المجتمع يبقى وحدة متماسكة.",when:"لو السؤال عن 'تالت جانب توماس' — التماسك الجماعي (Communal Coherence)."}},
+  {q:"A community worker is a professional focused on what?",opts:["Individual therapy","Collective problems and self-management","Financial planning","Government policy"],ans:1,topic:"Community Worker Role",exp:{en:"A community worker focuses on collective problems and self-management of the people concerned.",ar:"العامل المجتمعي بيركز على المشاكل الجماعية وإدارة الذات للناس المعنيين.",when:"لو السؤال عن 'تعريف العامل المجتمعي' — المشاكل الجماعية وإدارة الذات."}},
+  {q:"Which type of community work involves a specific area with different groups?",opts:["Categorical","Thematic","Territorial","Political"],ans:2,topic:"Types of Community Work",exp:{en:"Territorial = working in a specific geographic area with different population groups.",ar:"إقليمي (Territorial) = شتغل في منطقة جغرافية محددة.",when:"لو السؤال فيه 'منطقة جغرافية محددة' — الإجابة Territorial (إقليمي)."}},
+  {q:"Which type focuses on working with specific groups?",opts:["Territorial","Categorical","Thematic","Social"],ans:1,topic:"Types of Community Work",exp:{en:"Categorical = working with specific groups like elderly, youth, women.",ar:"تصنيفي (Categorical) = شتغل مع فئة معينة زي كبار السن أو الشباب.",when:"لو السؤال عن 'فئة معينة' زي كبار السن أو الشباب — Categorical."}},
+  {q:"Working on topics like education or environment is which type?",opts:["Territorial","Categorical","Thematic","Structural"],ans:2,topic:"Types of Community Work",exp:{en:"Thematic = working on a specific topic like education or environmental issues.",ar:"موضوعاتي (Thematic) = شتغل في موضوع محدد زي التعليم أو البيئة.",when:"لو السؤال عن 'موضوع محدد' زي التعليم أو البيئة — Thematic."}},
+  {q:"What are the TWO main tasks of community workers?",opts:["Research and policy","Support and innovation","Training and evaluation","Funding and planning"],ans:1,topic:"Main Tasks",exp:{en:"Two main tasks: (1) supporting local communities, (2) innovation — stimulating new projects.",ar:"المهمتان الرئيسيتان: دعم المجتمعات + الابتكار وتحفيز مشاريع جديدة.",when:"لو السؤال عن 'المهمتين الرئيسيتين للعامل المجتمعي' — الدعم والابتكار."}},
+  {q:"How many kinds of support does a community worker provide?",opts:["Two","Three","Four","Five"],ans:2,topic:"Types of Support",exp:{en:"Four kinds: organizational, strategic, educational, and facilitating support.",ar:"أربعة أنواع: تنظيمي، استراتيجي، تعليمي، تسهيلي.",when:"لو السؤال عن 'عدد أنواع الدعم' — الإجابة أربعة."}},
+  {q:"Which is NOT one of the four types of support?",opts:["Organizational","Strategic","Financial","Educational"],ans:2,topic:"Types of Support",exp:{en:"The four are: organizational, strategic, educational, facilitating. Financial is NOT listed.",ar:"الأربعة هم: تنظيمي، استراتيجي، تعليمي، تسهيلي. المالي مش من ضمنهم.",when:"لو السؤال فيه 'مش من ضمن أنواع الدعم' — المالي (Financial) هو المنفي."}},
+  {q:"According to Reznicek (1994), what is the aim of community work?",opts:["Building infrastructure","Mobilization and self-help of citizens","Creating parties","Training professionals"],ans:1,topic:"Czech Definitions",exp:{en:"Reznicek: community work aims to mobilize self-help of citizens on behalf of a larger number of people.",ar:"رزنيتشيك: الهدف هو تعبئة وتفعيل المساعدة الذاتية للمواطنين.",when:"لو السؤال عن 'هدف العمل المجتمعي عند رزنيتشيك' — التعبئة والمساعدة الذاتية."}},
+  {q:"According to Reznicek, community work requires cooperation with whom?",opts:["Universities only","International organizations","Local government and political authority","Private companies"],ans:2,topic:"Czech Definitions",exp:{en:"Reznicek: cooperation with local government representatives and political authority is required.",ar:"رزنيتشيك: لازم تعاون مع ممثلي الحكومة المحلية والسلطة السياسية.",when:"لو السؤال عن 'من يحتاج التعاون معه عند رزنيتشيك' — الحكومة المحلية والسلطة السياسية."}},
+  {q:"What role does the community worker fulfill according to Reznicek?",opts:["Judge and evaluator","Stimulator and organizer","Researcher and planner","Trainer and supervisor"],ans:1,topic:"Czech Definitions",exp:{en:"Reznicek: the community worker is a stimulator (محفز) and organizer (منظم).",ar:"عند رزنيتشيك: العامل المجتمعي هو محفز (بيحرك الناس) ومنظم (بيرتب الأمور).",when:"لو السؤال عن 'دور العامل عند رزنيتشيك' — محفز ومنظم."}},
+  {q:"How did Hartl (1997) define community work?",opts:["A form of therapy","A method of coping with social change","A government program","A religious practice"],ans:1,topic:"Czech Definitions",exp:{en:"Hartl defined community work as a method of coping with social change.",ar:"هارتل: العمل المجتمعي هو طريقة للتعامل مع التغير الاجتماعي.",when:"لو السؤال عن 'تعريف هارتل للعمل المجتمعي' — طريقة للتعامل مع التغيير الاجتماعي."}},
+  {q:"According to Hartl, community work leans on what?",opts:["Government funding","Involving people in problems affecting their lives","Academic research","International cooperation"],ans:1,topic:"Czech Definitions",exp:{en:"Hartl: community work leans on involving people in problems that influence their lives.",ar:"هارتل: العمل المجتمعي بيعتمد على إشراك الناس في المشاكل اللي بتأثر على حياتهم.",when:"لو السؤال عن 'ما يعتمد عليه العمل المجتمعي عند هارتل' — إشراك الناس."}},
+  {q:"From a global viewpoint, community work does what according to Havrdova?",opts:["Creates jobs","Facilitates social change","Builds infrastructure","Manages governments"],ans:1,topic:"Czech Definitions",exp:{en:"Havrdova: from a global viewpoint, community work facilitates social change.",ar:"هافردوفا: من منظور عالمي، العمل المجتمعي بيسهّل التغيير الاجتماعي.",when:"لو السؤال عن 'منظور هافردوفا العالمي' — تسهيل التغيير الاجتماعي."}},
+  {q:"Havrdova says community work helps people who are what?",opts:["Rich","Powerless","Foreign","Government employees"],ans:1,topic:"Czech Definitions",exp:{en:"Havrdova says it helps the powerless discover and assert their skills.",ar:"هافردوفا: بيساعد الضعفاء يكتشفوا ويثبتوا مهاراتهم.",when:"لو السؤال عن 'من يساعده العمل المجتمعي عند هافردوفا' — الضعفاء."}},
+  {q:"What is the GENERAL objective of community work?",opts:["Profit making","Political control","Aspiration for any social change","Entertainment"],ans:2,topic:"Objectives",exp:{en:"The general objective = aspiration for any social change.",ar:"الهدف العام = السعي نحو أي تغيير اجتماعي.",when:"لو السؤال عن 'الهدف العام للعمل المجتمعي' — السعي للتغيير الاجتماعي."}},
+  {q:"Through how many processes does community work achieve its objectives?",opts:["One","Two","Three","Four"],ans:1,topic:"Objectives",exp:{en:"Through two processes: analyzing the social situation + forming relationships.",ar:"عبر عمليتين: تحليل الوضع الاجتماعي + تكوين العلاقات.",when:"لو السؤال عن 'عدد العمليات' لتحقيق الأهداف — اثنتان."}},
+  {q:"What are the three important steps for achieving objectives?",opts:["Plan, implement, evaluate","Activation, identification, equalizing tension between needs","Research, train, fund","Assess, intervene, follow-up"],ans:1,topic:"Objectives",exp:{en:"Three steps: Activation, Identification, Equalizing tension between needs.",ar:"ثلاث خطوات: التفعيل، التعريف، موازنة التوتر بين الاحتياجات.",when:"لو السؤال عن 'الخطوات الثلاث لتحقيق الأهداف' — التفعيل والتعريف والموازنة."}},
+  {q:"How many models did Rothman propose?",opts:["Two","Three","Four","Five"],ans:1,topic:"Rothman's Models",exp:{en:"Rothman proposed three models: Local Development, Social Planning, Social Action.",ar:"روثمان اقترح 3 نماذج: التنمية المحلية، التخطيط الاجتماعي، العمل الاجتماعي.",when:"لو السؤال عن 'عدد نماذج روثمان' — ثلاثة."}},
+  {q:"In Rothman's Local Development, what are the important elements?",opts:["Funding and research","Leadership development and education of participants","Policy and law","International cooperation"],ans:1,topic:"Rothman's Models",exp:{en:"Local development: leadership development + education of participants are the important elements.",ar:"التنمية المحلية: تطوير القيادة + تعليم المشاركين.",when:"لو السؤال عن 'عناصر التنمية المحلية' — القيادة والتعليم."}},
+  {q:"Rothman's Social Planning relies heavily on what?",opts:["Community meetings","Rational problem solving and technical methods","Religious guidance","Political campaigns"],ans:1,topic:"Rothman's Models",exp:{en:"Social Planning: rational problem solving + technical methods like research and systems analysis.",ar:"التخطيط الاجتماعي: حل المشاكل العقلاني + الطرق التقنية.",when:"لو السؤال عن 'ما يعتمد عليه التخطيط الاجتماعي' — حل المشاكل العقلاني."}},
+  {q:"Rothman's Social Action is used to do what?",opts:["Provide charity","Alter institutional policies or change power distribution","Build centers","Train workers"],ans:1,topic:"Rothman's Models",exp:{en:"Social Action: used by groups to alter institutional policies or change power distribution.",ar:"العمل الاجتماعي: بيستخدمه الجماعات اللي عايزة تغيير في السياسات أو توزيع السلطة.",when:"لو السؤال عن 'غرض العمل الاجتماعي' — تغيير السياسات أو توزيع السلطة."}},
+  {q:"How many models did Popple identify?",opts:["Three","Five","Seven","Nine"],ans:2,topic:"Popple's Models",exp:{en:"Popple identified 7 models of community work.",ar:"بوبل حدد 7 نماذج.",when:"لو السؤال عن 'عدد نماذج بوبل' — سبعة."}},
+  {q:"What is Popple's FIRST model?",opts:["Community education","Community development","Community care","Community action"],ans:2,topic:"Popple's Models",exp:{en:"Popple's first model is Community Care.",ar:"أول نموذج عند بوبل = رعاية المجتمع (Community Care).",when:"لو السؤال عن 'أول نموذج بوبل' — Community Care."}},
+  {q:"What is Popple's LAST (7th) model?",opts:["Community action","Social planning","Community education","Feminist community work"],ans:3,topic:"Popple's Models",exp:{en:"Popple's 7th model is Feminist Community Work.",ar:"السابع عند بوبل = عمل مجتمع النسويات (Feminist Community Work).",when:"لو السؤال عن 'سابع نموذج بوبل' — Feminist Community Work."}},
+  {q:"Community planning emphasizes the involvement of all what?",opts:["Government officials","Stakeholders in a given area","International experts","Academic researchers"],ans:1,topic:"Popple's Models",exp:{en:"Community planning emphasizes involving all stakeholders in a given area.",ar:"التخطيط المجتمعي بيركز على مشاركة كل أصحاب المصلحة.",when:"لو السؤال عن 'من يُشرك في التخطيط المجتمعي' — أصحاب المصلحة (Stakeholders)."}},
+  {q:"Community planning uses which methods?",opts:["Force and authority","Dialogue and negotiations","Voting only","Research papers"],ans:1,topic:"Popple's Models",exp:{en:"Community planning uses dialogue and negotiations.",ar:"التخطيط المجتمعي بيستخدم الحوار والمفاوضات.",when:"لو السؤال عن 'أساليب التخطيط المجتمعي' — الحوار والتفاوض."}},
+  {q:"What result does community planning aim to achieve?",opts:["Imposed by experts","Adopted and supported by the majority of stakeholders","Chosen by government","From international bodies"],ans:1,topic:"Popple's Models",exp:{en:"Community planning aims for a result adopted and supported by the majority of stakeholders.",ar:"هدف التخطيط المجتمعي = نتيجة مقبولة ومدعومة من غالبية أصحاب المصلحة.",when:"لو السؤال عن 'نتيجة التخطيط المجتمعي' — مقبولة من الأغلبية."}},
+  {q:"Which model focuses on gender issues?",opts:["Community care","Community action","Community education","Feminist community work"],ans:3,topic:"Popple's Models",exp:{en:"Feminist community work specifically addresses gender and women's issues.",ar:"عمل مجتمع النسويات بيركز على قضايا المرأة والجندر.",when:"لو السؤال عن 'من يركز على قضايا المرأة والنوع الاجتماعي' — Feminist Community Work."}},
+  {q:"What does 'activation' mean in community work steps?",opts:["Writing reports","Mobilizing and motivating people to act","Evaluating outcomes","Building infrastructure"],ans:1,topic:"Objectives",exp:{en:"Activation = mobilizing and motivating people to take action.",ar:"التفعيل = تحريك وتشجيع الناس عشان ياخدوا خطوات فعلية.",when:"لو السؤال عن 'معنى التفعيل' — تحريك وتحفيز الناس."}},
+  {q:"Rothman's Local Development values what?",opts:["Technical methods","Participation and leadership","International funding","Government control"],ans:1,topic:"Rothman's Models",exp:{en:"Local development sets great store by the values of participation and leadership.",ar:"التنمية المحلية بتقدّر قيمة المشاركة والقيادة جداً.",when:"لو السؤال عن 'قيم التنمية المحلية' — المشاركة والقيادة."}},
+  {q:"Social Planning originally focused on what?",opts:["Education reform","Co-ordination of social services","Political campaigns","Environment"],ans:1,topic:"Rothman's Models",exp:{en:"Social Planning originally focused on the co-ordination of social services.",ar:"التخطيط الاجتماعي في الأصل كان بيركز على تنسيق الخدمات الاجتماعية.",when:"لو السؤال عن 'التركيز الأصلي للتخطيط الاجتماعي' — تنسيق الخدمات الاجتماعية."}},
+  {q:"Reznicek says citizens become what in community work?",opts:["Passive recipients","Active activists/participants","Government officials","Academic researchers"],ans:1,topic:"Czech Definitions",exp:{en:"Reznicek: citizens become activists and active inhabitants.",ar:"رزنيتشيك: المواطنين بيبقوا ناشطين ومشاركين فعليين.",when:"لو السؤال عن 'ما يصبح عليه المواطنون في عمل رزنيتشيك' — ناشطين ومشاركين."}},
+  {q:"Havrdova says community work confronts what?",opts:["Government policies only","Discriminatory attitudes and behaviors of individuals and institutions","International trade","Economic systems"],ans:1,topic:"Czech Definitions",exp:{en:"Havrdova: confronts attitudes and behaviors of individuals and institutions that discriminate.",ar:"هافردوفا: بيواجه المواقف والسلوكيات التمييزية.",when:"لو السؤال عن 'ما يواجهه العمل المجتمعي عند هافردوفا' — التمييز."}},
+  {q:"What does self-management mean in community work?",opts:["Government management","People managing their own affairs","Corporate management","International management"],ans:1,topic:"Community Worker Role",exp:{en:"Self-management = people managing their own problems and affairs without just depending on outside help.",ar:"إدارة الذات = الناس يديروا شؤونهم بنفسهم.",when:"لو السؤال عن 'معنى إدارة الذات' — الناس تدير شؤونها بنفسها."}},
+  {q:"What is 'organizational support'?",opts:["Providing money","Helping communities organize themselves structurally","International aid","Legal representation"],ans:1,topic:"Types of Support",exp:{en:"Organizational support = helping local groups organize themselves properly and structurally.",ar:"الدعم التنظيمي = مساعدة المجموعات تنظم نفسها بشكل صح.",when:"لو السؤال عن 'ما هو الدعم التنظيمي' — مساعدة المجموعات تنظم نفسها."}},
+  {q:"What is 'facilitating support'?",opts:["Writing policies","Making it easier for communities to act","Financial investment","Political lobbying"],ans:1,topic:"Types of Support",exp:{en:"Facilitating support = making it easier for communities to take action.",ar:"الدعم التسهيلي = تسهيل الأمور عشان المجتمعات تقدر تتصرف.",when:"لو السؤال عن 'الدعم التسهيلي' — تسهيل تحرك المجتمعات."}},
+  {q:"What is 'strategic support'?",opts:["Day-to-day help","Long-term planning and direction","Financial grants","Academic research"],ans:1,topic:"Types of Support",exp:{en:"Strategic support = helping with long-term planning and direction.",ar:"الدعم الاستراتيجي = المساعدة في التخطيط بعيد المدى.",when:"لو السؤال عن 'الدعم الاستراتيجي' — التخطيط بعيد المدى."}},
+  {q:"Reznicek was published in which year?",opts:["1990","1992","1994","1996"],ans:2,topic:"Czech Definitions",exp:{en:"Reznicek's definition was published in 1994.",ar:"رزنيتشيك نشر تعريفه سنة 1994.",when:"لو السؤال عن 'سنة رزنيتشيك' — 1994."}},
+  {q:"What does 'community care' mean?",opts:["Hospital management","Caring for vulnerable people within their community","International aid","Government welfare"],ans:1,topic:"Popple's Models",exp:{en:"Community care = providing care for vulnerable people within their own community.",ar:"رعاية المجتمع = تقديم الرعاية للأشخاص الهشين داخل مجتمعهم.",when:"لو السؤال عن 'تعريف Community Care' — رعاية الأشخاص الهشين داخل مجتمعهم."}},
+  {q:"Thomas published his three aspects in which year?",opts:["1980","1981","1982","1983"],ans:3,topic:"Thomas's Three Aspects",exp:{en:"Thomas proposed his three aspects in 1983.",ar:"توماس اقترح الثلاثة جوانب سنة 1983.",when:"لو السؤال عن 'سنة توماس' — 1983."}},
+  {q:"What does 'educational support' involve?",opts:["Building schools","Teaching and developing community members' knowledge","Providing textbooks","Academic certification"],ans:1,topic:"Types of Support",exp:{en:"Educational support = teaching and developing the knowledge and skills of community members.",ar:"الدعم التعليمي = تعليم وتطوير معرفة ومهارات أفراد المجتمع.",when:"لو السؤال عن 'الدعم التعليمي' — تعليم وتطوير المعرفة."}},
+  {q:"Popple's social/community planning includes which steps?",opts:["Only funding","Analyzing conditions, setting goals, designing programmes, mobilizing resources","Only research","Only implementation"],ans:1,topic:"Popple's Models",exp:{en:"Includes: analyzing social conditions, setting goals, designing service programmes, mobilizing resources, implementing and evaluating.",ar:"يشمل: تحليل الظروف، تحديد الأهداف، تصميم البرامج، تعبئة الموارد، التطبيق والتقييم.",when:"لو السؤال عن 'خطوات التخطيط المجتمعي عند بوبل' — الخمس خطوات كلها."}},
+  {q:"What are 'stakeholders' in community planning?",opts:["Government only","All people who have an interest or are affected by a decision","Academic experts only","International organizations"],ans:1,topic:"Popple's Models",exp:{en:"Stakeholders = all people who have an interest in or are affected by a decision or project.",ar:"أصحاب المصلحة = كل الناس اللي ليهم مصلحة أو بيتأثروا بقرار.",when:"لو السؤال عن 'من هم أصحاب المصلحة' — كل من له مصلحة أو يتأثر."}},
+ 
+  // LEVEL 2
+  {q:"What makes community work an 'umbrella term'?",opts:["Its legal status","It covers a wide range of different activities","It applies only to government","It has a clear definition"],ans:1,topic:"Definition of Community Work",exp:{en:"It covers so many different activities that it acts as an umbrella over all of them.",ar:"بيغطي أنشطة كتيرة ومختلفة جداً لدرجة إنه بيبقى زي الشمسية فوقهم.",when:"لو السؤال 'لماذا يُعتبر مصطلح شامل' — لأنه يغطي أنشطة واسعة ومختلفة."}},
+  {q:"Popple mentioned which activities as examples of community work?",opts:["Voting and elections","Visiting housebound people and working in deprived areas","International diplomacy","Corporate management"],ans:1,topic:"Definition of Community Work",exp:{en:"Popple: visiting housebound/older people, working in deprived neighborhoods, intervening with young offenders.",ar:"بوبل ذكر: زيارة المقيمين بمنازلهم، العمل في أحياء محرومة.",when:"لو السؤال عن 'أمثلة بوبل على العمل المجتمعي' — زيارة المقيمين والمناطق المحرومة."}},
+  {q:"What does Thomas mean by 'communal coherence'?",opts:["Individual achievement","Community unity and togetherness","Political party formation","Government structure"],ans:1,topic:"Thomas's Three Aspects",exp:{en:"Communal coherence = the community stays united and together as one body.",ar:"التماسك الجماعي = المجتمع يبقى متوحد ومتحد.",when:"لو السؤال عن 'معنى التماسك الجماعي' — الوحدة والترابط."}},
+  {q:"What does 'identification' mean in community work objectives?",opts:["Finding funding","Identifying the problem and community needs","Training workers","Building relationships"],ans:1,topic:"Objectives",exp:{en:"Identification = identifying and naming the problem and needs of the community clearly.",ar:"التعريف = تحديد المشكلة واحتياجات المجتمع بوضوح.",when:"لو السؤال عن 'معنى التعريف في خطوات الأهداف' — تحديد المشكلة والاحتياجات."}},
+  {q:"What does 'community education' involve?",opts:["Building a school","Educating members about their rights and skills","Setting school curriculum","Professional certification"],ans:1,topic:"Popple's Models",exp:{en:"Community education = educating community members about their rights, skills, and how to address their issues.",ar:"التعليم المجتمعي = تعليم أفراد المجتمع حقوقهم ومهاراتهم.",when:"لو السؤال عن 'ما هو التعليم المجتمعي' — تعليم الأعضاء حقوقهم ومهاراتهم."}},
+  {q:"Rothman's Social Planning expanded to include what?",opts:["It shrinks","Program development in all major social welfare institutions","Only housing","Only politics"],ans:1,topic:"Rothman's Models",exp:{en:"Social Planning expanded to include program development and planning in all major social welfare institutions.",ar:"التخطيط الاجتماعي اتوسع ليشمل تطوير البرامج في كل المؤسسات الكبرى.",when:"لو السؤال عن 'توسع التخطيط الاجتماعي' — شمل تطوير البرامج."}},
+  {q:"Technical methods in Social Planning include what?",opts:["Manual labor","Research and systems analysis","Artistic activities","Religious practices"],ans:1,topic:"Rothman's Models",exp:{en:"Technical methods in social planning = research and systems analysis.",ar:"الطرق التقنية = البحث وتحليل الأنظمة.",when:"لو السؤال عن 'الطرق التقنية في التخطيط الاجتماعي' — البحث وتحليل الأنظمة."}},
+  {q:"What does Social Action seek to change?",opts:["Individual behavior only","Institutional policies or distribution of power","Academic curricula","International relations"],ans:1,topic:"Rothman's Models",exp:{en:"Social Action seeks to alter institutional policies or change distribution of power.",ar:"العمل الاجتماعي بيسعى لتغيير سياسات المؤسسات أو توزيع السلطة.",when:"لو السؤال عن 'ما يسعى لتغييره العمل الاجتماعي' — السياسات أو توزيع السلطة."}},
+  {q:"What does 'powerless' mean in Havrdova's context?",opts:["People without education","People with no power or influence in society","Foreign citizens","Young people"],ans:1,topic:"Czech Definitions",exp:{en:"Powerless = people who have no power or influence — marginalized individuals.",ar:"الضعفاء = الناس اللي مالهمش قوة أو تأثير — المهمشون.",when:"لو السؤال عن 'معنى الضعفاء عند هافردوفا' — بلا قوة أو تأثير."}},
+  {q:"What does Popple's 'community development' focus on?",opts:["Building roads","Developing community capacity and improving quality of life","Political campaigns","International development"],ans:1,topic:"Popple's Models",exp:{en:"Community development = building community capacity and improving quality of life.",ar:"تطوير المجتمع = بناء قدرات المجتمع وتحسين جودة الحياة.",when:"لو السؤال عن 'تركيز Community Development' — بناء القدرات وتحسين الحياة."}},
+  {q:"What does 'equalizing tension between needs' mean?",opts:["Ignoring some needs","Balancing and prioritizing different needs over time","Financial budgeting","Legal procedures"],ans:1,topic:"Objectives",exp:{en:"Equalizing tension between needs = balancing responses to different community needs properly over time.",ar:"موازنة التوتر بين الاحتياجات = توازن الاستجابة للاحتياجات المختلفة.",when:"لو السؤال عن 'المرحلة الثالثة في خطوات الأهداف' — موازنة الاحتياجات."}},
+  {q:"Which model emphasizes 'rational problem solving'?",opts:["Community care","Local development","Social planning","Community action"],ans:2,topic:"Rothman's Models",exp:{en:"Rothman's Social Planning model emphasizes rational problem solving.",ar:"نموذج التخطيط الاجتماعي هو اللي بيركز على حل المشاكل بطريقة عقلانية.",when:"لو السؤال عن 'من يركز على حل المشاكل العقلاني' — Social Planning."}},
+  {q:"What does 'social change' mean in community work?",opts:["Changing individuals only","Changing social structures, conditions, or power relations","Changing government laws only","Changing economic policies only"],ans:1,topic:"Objectives",exp:{en:"Social change = changing social structures, conditions, power relations, or how society works.",ar:"التغيير الاجتماعي = تغيير البنى الاجتماعية، الظروف، علاقات السلطة.",when:"لو السؤال عن 'معنى التغيير الاجتماعي' — تغيير البنى والظروف."}},
+  {q:"What does 'innovation' as a main task mean?",opts:["Improving old methods only","Signaling and stimulating new projects","Cutting costs","Managing existing services"],ans:1,topic:"Main Tasks",exp:{en:"Innovation = identifying and stimulating new projects that benefit the community.",ar:"الابتكار = اكتشاف وتحفيز مشاريع جديدة تفيد المجتمع.",when:"لو السؤال عن 'الابتكار كمهمة رئيسية' — تحفيز مشاريع جديدة."}},
+  {q:"How does Popple's 'community development' differ from 'community care'?",opts:["They are the same","Development builds capacity; care supports vulnerable individuals directly","Care is more political","Development ignores vulnerable people"],ans:1,topic:"Popple's Models",exp:{en:"Development = long-term capacity building. Care = direct support to vulnerable individuals.",ar:"التطوير = بناء قدرات طويل الأمد. الرعاية = دعم مباشر للأشخاص الهشين.",when:"لو السؤال يفرق بين 'Development' و'Care' — التطوير للقدرات والرعاية للدعم المباشر."}},
+  {q:"What does 'community organization' involve?",opts:["Building physical structures","Coordinating and organizing community groups for collective goals","Individual counseling","Policy writing"],ans:1,topic:"Popple's Models",exp:{en:"Community organization = coordinating and organizing community groups to achieve collective goals.",ar:"تنظيم المجتمع = تنسيق وتنظيم مجموعات المجتمع لأهداف مشتركة.",when:"لو السؤال عن 'Community Organization' — تنسيق المجموعات لأهداف مشتركة."}},
+  {q:"What does Reznicek say is needed alongside citizen mobilization?",opts:["Only volunteers","Cooperation with local government and political authority","International funding","Academic research"],ans:1,topic:"Czech Definitions",exp:{en:"Reznicek: self-help requires cooperation with local government and political authority representatives.",ar:"رزنيتشيك: يلزم تعاون مع الحكومة المحلية والسلطة السياسية.",when:"لو السؤال عن 'ما يلزم التعبئة عند رزنيتشيك' — التعاون مع الحكومة المحلية."}},
+  {q:"What does 'assert their skills' mean?",opts:["Hide skills","Prove and demonstrate capabilities confidently","Learn new skills","Reject skills"],ans:1,topic:"Czech Definitions",exp:{en:"Assert = prove, demonstrate, and stand up for capabilities confidently.",ar:"يُثبتوا = يُظهروا قدراتهم بثقة.",when:"لو السؤال عن 'معنى Assert their skills' — إثبات القدرات بثقة."}},
+  {q:"What does 'dialogue' mean in community planning?",opts:["One-way communication from expert","Two-way open conversation between all parties","Written reports only","Government announcements"],ans:1,topic:"Popple's Models",exp:{en:"Dialogue = two-way open conversation where all parties listen and speak.",ar:"الحوار = محادثة مفتوحة في اتجاهين.",when:"لو السؤال عن 'معنى الحوار في التخطيط المجتمعي' — محادثة مفتوحة ثنائية الاتجاه."}},
+  {q:"What does 'negotiation' mean in community planning?",opts:["Fighting","Reaching agreements through give and take","Forcing decisions","Avoiding conflict"],ans:1,topic:"Popple's Models",exp:{en:"Negotiation = reaching agreements through compromise and give and take between parties.",ar:"التفاوض = الوصول لاتفاقيات من خلال الأخذ والعطاء.",when:"لو السؤال عن 'معنى التفاوض' — الوصول للاتفاقيات بالأخذ والعطاء."}},
+  {q:"Havrdova's work was referenced through which author?",opts:["Rothman","Popple","Hartl (1993)","Thomas"],ans:2,topic:"Czech Definitions",exp:{en:"Havrdova's work was referenced through Hartl (1993).",ar:"عمل هافردوفا اتذكر من خلال هارتل (1993).",when:"لو السؤال عن 'من أشار لعمل هافردوفا' — هارتل 1993."}},
+  {q:"What does 'mobilization' mean in Reznicek's definition?",opts:["Military action","Moving and motivating people to participate","Financial planning","Building structures"],ans:1,topic:"Czech Definitions",exp:{en:"Mobilization = moving and motivating citizens to actively participate and help each other.",ar:"التعبئة = تحريك وتحفيز المواطنين للمشاركة الفعلية.",when:"لو السؤال عن 'معنى التعبئة عند رزنيتشيك' — تحريك الناس للمشاركة."}},
+  {q:"Why is majority adoption important in community planning?",opts:["Legal binding","Ensures sustainability and genuine community ownership","Impress observers","Satisfy government"],ans:1,topic:"Popple's Models",exp:{en:"Majority adoption = more sustainable + community truly owns the outcome.",ar:"تبني الأغلبية = أكثر استدامة والمجتمع يملك النتيجة.",when:"لو السؤال عن 'أهمية تبني الأغلبية' — الاستدامة وملكية المجتمع."}},
+  {q:"What does 'implementation' mean in community planning?",opts:["Planning only","Actually carrying out the planned programs","Evaluating results","Fundraising"],ans:1,topic:"Popple's Models",exp:{en:"Implementation = actually carrying out and applying the planned programs in practice.",ar:"التطبيق = تنفيذ البرامج المخططة على أرض الواقع.",when:"لو السؤال عن 'معنى التطبيق' — التنفيذ الفعلي."}},
+  {q:"What does 'evaluation' mean in community planning?",opts:["Starting new programs","Assessing how well programs worked","Collecting money","Training staff"],ans:1,topic:"Popple's Models",exp:{en:"Evaluation = assessing how well the programs and services worked.",ar:"التقييم = تقييم مدى نجاح البرامج.",when:"لو السؤال عن 'معنى التقييم' — قياس مدى نجاح البرامج."}},
+  {q:"What makes feminist community work different from other models?",opts:["Focuses on men","Addresses gender inequality and women's issues","Only for urban areas","Only for economics"],ans:1,topic:"Popple's Models",exp:{en:"Feminist community work specifically addresses gender inequality and women's issues.",ar:"يتعامل مع التمييز القائم على النوع الاجتماعي وقضايا المرأة.",when:"لو السؤال عن 'ما يميز العمل النسوي' — تركيزه على النوع الاجتماعي."}},
+  {q:"What does 'community action' in Popple focus on?",opts:["Peaceful coexistence","Challenging power and fighting for social justice","Building sports facilities","Academic research"],ans:1,topic:"Popple's Models",exp:{en:"Community action = challenging power and fighting for social justice.",ar:"العمل المجتمعي = تحدي السلطة والنضال للعدالة الاجتماعية.",when:"لو السؤال عن 'تركيز Community Action عند بوبل' — تحدي السلطة والعدالة."}},
+  {q:"What does 'involving people' mean in Hartl's definition?",opts:["Just informing them","Making them active participants in problems affecting their lives","Paying them","Observing them"],ans:1,topic:"Czech Definitions",exp:{en:"Involving = making people active participants in problems that affect their own lives.",ar:"الإشراك = جعل الناس مشاركين فعليين في المشاكل اللي بتأثر على حياتهم.",when:"لو السؤال عن 'معنى الإشراك عند هارتل' — المشاركة الفعلية."}},
+  {q:"Popple's community work is similar to which of Rothman's models?",opts:["Social action","Social planning","Local development","All three"],ans:2,topic:"Comparing Models",exp:{en:"Popple's community work/development is most similar to Rothman's Local Development model.",ar:"عمل/تطوير المجتمع عند بوبل يشبه أكثر نموذج التنمية المحلية عند روثمان.",when:"لو السؤال يقارن بوبل بروثمان في التطوير — التنمية المحلية."}},
+  {q:"What does a community worker do when providing 'organizational support'?",opts:["Writes academic papers","Helps groups set up structures like committees and rules","Provides funding","Runs political campaigns"],ans:1,topic:"Types of Support",exp:{en:"Organizational support = helps groups create structures: committees, rules, roles, decision-making processes.",ar:"الدعم التنظيمي = يساعد المجموعات تكوّن هياكل: لجان، قواعد، أدوار، عمليات قرار.",when:"لو السؤال عن 'مثال عملي للدعم التنظيمي' — إنشاء الهياكل."}},
+  {q:"According to Havrdova, community work helps communities achieve what?",opts:["Economic growth only","Balance of power and social change","Political dominance","Religious goals"],ans:1,topic:"Czech Definitions",exp:{en:"Havrdova: community work helps achieve balance of power and facilitates social change.",ar:"هافردوفا: يساعد على تحقيق توازن القوى وتسهيل التغيير الاجتماعي.",when:"لو السؤال عن 'ما تحققه هافردوفا' — توازن القوى والتغيير الاجتماعي."}},
+  {q:"The FIRST step in Popple's community planning process is:",opts:["Setting goals","Evaluating outcomes","Analyzing social conditions","Mobilizing resources"],ans:2,topic:"Popple's Models",exp:{en:"First step in community planning = analyzing the social conditions of the area.",ar:"أول خطوة في التخطيط المجتمعي = تحليل الظروف الاجتماعية للمنطقة.",when:"لو السؤال عن 'أول خطوة في التخطيط المجتمعي' — تحليل الظروف."}},
+  {q:"Rothman's Local Development is different from Social Action because:",opts:["Both are identical","Local development builds consensus; Social Action challenges power","No difference exists","They have the same goals"],ans:1,topic:"Rothman's Models",exp:{en:"Local Development = consensus building and participation. Social Action = challenging power structures.",ar:"التنمية المحلية = بناء توافق ومشاركة. العمل الاجتماعي = تحدي بنى السلطة.",when:"لو السؤال يفرق بين التنمية المحلية والعمل الاجتماعي — التوافق مقابل التحدي."}},
+  {q:"Reznicek says community work mobilizes self-help 'on behalf of' whom?",opts:["A single person","A larger number of people","Government only","International donors"],ans:1,topic:"Czech Definitions",exp:{en:"Reznicek: mobilizes self-help of citizens on behalf of a larger number of people in society.",ar:"رزنيتشيك: يعبّئ المساعدة الذاتية لصالح عدد أكبر من الناس في المجتمع.",when:"لو السؤال عن 'لمصلحة من تتم التعبئة عند رزنيتشيك' — عدد أكبر من الناس."}},
+  {q:"'Communal coherence' in Thomas is best achieved through:",opts:["Government orders","Shared goals and collective action","Financial incentives","Legal enforcement"],ans:1,topic:"Thomas's Three Aspects",exp:{en:"Communal coherence is best achieved through shared goals, trust, and collective action.",ar:"التماسك الجماعي يتحقق من خلال الأهداف المشتركة والثقة والتحرك الجماعي.",when:"لو السؤال عن 'كيف يتحقق التماسك الجماعي' — الأهداف المشتركة والعمل الجماعي."}},
+  {q:"In Reznicek's definition, what does 'on behalf of' suggest about community workers?",opts:["They work for pay","They act as advocates and representatives for the wider community","They replace government","They work alone"],ans:1,topic:"Czech Definitions",exp:{en:"'On behalf of' suggests advocacy — community workers act as advocates for the wider community's interests.",ar:"'لصالح' تعني المناصرة — العمال يمثلون مصالح المجتمع الأوسع.",when:"لو السؤال عن 'دلالة عبارة لصالح عند رزنيتشيك' — المناصرة والتمثيل."}},
+  {q:"Which support type would a worker use to teach residents how to run a meeting?",opts:["Strategic","Facilitating","Organizational","Educational"],ans:3,topic:"Types of Support",exp:{en:"Teaching residents a skill (running meetings) = Educational support.",ar:"تعليم السكان مهارة (إدارة الاجتماعات) = دعم تعليمي.",when:"لو السؤال عن 'تعليم مهارة' — الدعم التعليمي."}},
+  {q:"Community planning's emphasis on 'all stakeholders' is related to which value?",opts:["Efficiency","Inclusivity and democratic participation","Speed","Cost-saving"],ans:1,topic:"Popple's Models",exp:{en:"Including all stakeholders = inclusivity and democratic participation in decision-making.",ar:"إشراك كل أصحاب المصلحة = الشمولية والمشاركة الديمقراطية.",when:"لو السؤال عن 'القيمة التي يعكسها إشراك أصحاب المصلحة' — الشمولية والديمقراطية."}},
+  {q:"A community worker finds that a group has no clear goals. Which step should come first?",opts:["Activation","Equalization","Identification","Implementation"],ans:2,topic:"Objectives",exp:{en:"Identification (defining the problem and needs) must come before action.",ar:"التعريف (تحديد المشكلة والاحتياجات) يجب أن يسبق التحرك.",when:"لو السؤال عن 'ماذا تفعل لو المجموعة مالهاش أهداف واضحة' — التعريف أولاً."}},
+  {q:"Social Planning and Local Development both operate within what?",opts:["Outside existing systems","The existing social system, working to improve it","Revolutionary frameworks","Only international frameworks"],ans:1,topic:"Rothman's Models",exp:{en:"Both Social Planning and Local Development work WITHIN the existing social system to improve it.",ar:"كلاهما يعملان داخل النظام الاجتماعي القائم لتحسينه.",when:"لو السؤال عن 'ما يشترك فيه التخطيط الاجتماعي والتنمية المحلية' — العمل داخل النظام."}},
+  {q:"What is the connection between 'self-management' and community work objectives?",opts:["Unrelated","Self-management IS the objective — communities managing their own change","Self-management is a problem","Only government can manage"],ans:1,topic:"Community Worker Role",exp:{en:"Self-management is the ultimate objective — communities become capable of managing their own affairs.",ar:"إدارة الذات هي الهدف النهائي — المجتمعات تصبح قادرة على إدارة شؤونها بنفسها.",when:"لو السؤال عن 'علاقة إدارة الذات بأهداف العمل المجتمعي' — هي الهدف نفسه."}},
+  {q:"According to Rothman, what is needed for Local Development to succeed?",opts:["Government funding alone","Active participation from community members and leadership development","Academic research","International support"],ans:1,topic:"Rothman's Models",exp:{en:"Local Development needs: active participation from community members + leadership development.",ar:"التنمية المحلية تحتاج: مشاركة فعلية + تطوير القيادة.",when:"لو السؤال عن 'شروط نجاح التنمية المحلية' — المشاركة وتطوير القيادة."}},
+  {q:"What does it mean that Social Planning is 'rational'?",opts:["It uses emotions","It uses evidence, logic and systematic methods to solve problems","It avoids research","It is political"],ans:1,topic:"Rothman's Models",exp:{en:"Rational = using evidence, data, and systematic/logical methods to identify and solve social problems.",ar:"عقلاني = استخدام الأدلة والبيانات والطرق المنهجية لتحديد المشاكل وحلها.",when:"لو السؤال عن 'معنى عقلاني في التخطيط الاجتماعي' — الأدلة والطرق المنهجية."}},// LEVEL 3
+  {q:"Compare Rothman and Popple: which model appears in Popple but NOT in Rothman?",opts:["Social planning","Local development","Community care","Social action"],ans:2,topic:"Comparing Models",exp:{en:"Community care is in Popple's 7 models but NOT one of Rothman's three models.",ar:"رعاية المجتمع موجودة في نماذج بوبل لكنها مش من نماذج روثمان الثلاثة.",when:"لو السؤال يطلب 'ما ليس في روثمان لكن في بوبل' — Community Care."}},
+  {q:"How does Hartl's definition DIFFER from Reznicek's?",opts:["Hartl: social change; Reznicek: self-help and mobilization","They are identical","Hartl: funding; Reznicek: education","Hartl: government; Reznicek: individuals"],ans:0,topic:"Czech Definitions - Compare",exp:{en:"Hartl: coping with social change. Reznicek: mobilization and self-help of citizens.",ar:"هارتل: طريقة للتعامل مع التغيير. رزنيتشيك: تعبئة ومساعدة ذاتية.",when:"لو السؤال يفرق بين هارتل ورزنيتشيك — هارتل للتغيير الاجتماعي، رزنيتشيك للتعبئة والمساعدة الذاتية."}},
+  {q:"A worker helps women facing domestic violence in a specific neighborhood. Which type is this?",opts:["Territorial only","Categorical only","Thematic only","Both categorical and territorial"],ans:3,topic:"Types of Community Work",exp:{en:"This combines categorical (specific group: women) AND territorial (specific neighborhood).",ar:"ده بيجمع تصنيفي (فئة: النساء) + إقليمي (حي محدد).",when:"لو السؤال يجمع بين 'فئة محددة' و'منطقة محددة' — التصنيفي والإقليمي معاً."}},
+  {q:"How do Thomas's three aspects work together?",opts:["Completely independent","Individual action + political + unity = complete framework","Only first matters","They contradict each other"],ans:1,topic:"Thomas's Three Aspects",exp:{en:"They work together: action on issues + political responsibility + communal coherence = comprehensive framework.",ar:"بيكملوا بعض: التحرك + المسؤولية السياسية + التماسك = إطار شامل.",when:"لو السؤال عن 'كيف تعمل الجوانب الثلاثة معاً' — تكاملية وليست مستقلة."}},
+  {q:"Which Rothman model best suits tackling institutional corruption?",opts:["Local development","Social planning","Social action","Community care"],ans:2,topic:"Rothman's Models",exp:{en:"Social Action: seeks to alter institutional policies and change power distribution — best for fighting corruption.",ar:"العمل الاجتماعي: يغير السياسات المؤسسية — الأنسب لمواجهة الفساد.",when:"لو السؤال عن 'الأنسب لمواجهة الفساد المؤسسي' — Social Action."}},
+  {q:"Which Rothman model best suits improving coordination between hospitals and social services?",opts:["Social action","Local development","Social planning","Community care"],ans:2,topic:"Rothman's Models",exp:{en:"Social Planning: focuses on coordination of social services and rational problem solving.",ar:"التخطيط الاجتماعي: يركز على تنسيق الخدمات وحل المشاكل عقلانياً.",when:"لو السؤال عن 'تنسيق الخدمات الاجتماعية' — Social Planning."}},
+  {q:"What is the CRITICAL difference between Social Planning and Social Action?",opts:["Planning uses money, action does not","Planning: rational coordination; Action: challenges power structures","Identical","Action is more academic"],ans:1,topic:"Rothman's Models",exp:{en:"Social Planning = rational, technical coordination. Social Action = challenging power and institutional policies.",ar:"التخطيط = تنسيق عقلاني. العمل الاجتماعي = تحدي السلطة.",when:"لو السؤال يفرق بين التخطيط والعمل الاجتماعي — التخطيط عقلاني والعمل يتحدى السلطة."}},
+  {q:"What is a potential criticism of community work being an 'umbrella term'?",opts:["Too specific","May lead to unclear professional identity and lack of focus","Too expensive","Excludes members"],ans:1,topic:"Definition of Community Work",exp:{en:"Being an umbrella term = unclear professional identity — workers may not know exactly what their role is.",ar:"كونه شامل = هوية مهنية غير واضحة.",when:"لو السؤال عن 'نقد كونه مصطلح شامل' — الهوية المهنية غير الواضحة."}},
+  {q:"How do the 4 support types work together?",opts:["Each works alone","Together they provide comprehensive support: structure + direction + knowledge + enabling","Only one needed","They conflict"],ans:1,topic:"Types of Support",exp:{en:"Organization (structure) + Strategy (direction) + Education (knowledge) + Facilitation (enabling) = comprehensive.",ar:"التنظيم + الاستراتيجي + التعليمي + التسهيلي = دعم شامل.",when:"لو السؤال عن 'كيف تعمل أنواع الدعم الأربعة معاً' — تكاملية."}},
+  {q:"How is feminist community work unique among Popple's 7 models?",opts:["Only one including women","Uses gender as explicit analytical lens to challenge inequality","Only for urban areas","Rejects all other models"],ans:1,topic:"Popple's Models",exp:{en:"Feminist community work uniquely uses gender as an explicit analytical lens.",ar:"العمل النسوي يستخدم النوع الاجتماعي كمنظور تحليلي صريح.",when:"لو السؤال عن 'ما يميز العمل النسوي عن باقي النماذج' — استخدام النوع الاجتماعي كمنظور."}},
+  {q:"Why is 'self-help' important in Reznicek's definition?",opts:["Reduces government costs","Empowers communities to solve their own problems rather than depending on external help","Only for rich communities","Temporary solution"],ans:1,topic:"Czech Definitions",exp:{en:"Self-help = empowers communities — they become problem-solvers, not passive recipients of help.",ar:"المساعدة الذاتية = تمكّن المجتمعات لتصبح حالّة مشاكلها.",when:"لو السؤال عن 'أهمية المساعدة الذاتية عند رزنيتشيك' — التمكين وليس الاتكالية."}},
+  {q:"Which Czech author has the most comprehensive view linking change, power, AND discrimination?",opts:["Reznicek","Hartl","Havrdova","Popple"],ans:2,topic:"Czech Definitions",exp:{en:"Havrdova's view is most comprehensive — linking social change, power balance, empowerment, and confronting discrimination.",ar:"هافردوفا أكثر شمولاً — تربط التغيير والقوة والتمكين ومواجهة التمييز.",when:"لو السؤال عن 'الأشمل من الكتّاب التشيك' — هافردوفا."}},
+  {q:"What is the difference between 'territorial' and 'thematic' community work?",opts:["Same thing","Territorial: specific place; thematic: specific topic regardless of place","Thematic more expensive","Territorial more modern"],ans:1,topic:"Types of Community Work",exp:{en:"Territorial = specific geographic area. Thematic = specific topic regardless of location.",ar:"الإقليمي = منطقة. الموضوعاتي = موضوع بصرف النظر عن المكان.",when:"لو السؤال يفرق بين الإقليمي والموضوعاتي — المكان مقابل الموضوع."}},
+  {q:"A worker helps a committee create a regular meeting schedule. Which support?",opts:["Educational","Strategic","Organizational","Facilitating"],ans:2,topic:"Types of Support",exp:{en:"Creating meeting structures = organizational support.",ar:"إنشاء جداول الاجتماعات = دعم تنظيمي.",when:"لو السؤال عن 'مساعدة مجموعة تنظم نفسها' — الدعم التنظيمي."}},
+  {q:"A worker helps residents understand their 5-year goals. Which support?",opts:["Facilitating","Educational","Organizational","Strategic"],ans:3,topic:"Types of Support",exp:{en:"Long-term goals and direction = strategic support.",ar:"الأهداف بعيدة المدى = دعم استراتيجي.",when:"لو السؤال عن 'التخطيط بعيد المدى' — الدعم الاستراتيجي."}},
+  {q:"A worker removes bureaucratic obstacles for a community group. Which support?",opts:["Strategic","Educational","Organizational","Facilitating"],ans:3,topic:"Types of Support",exp:{en:"Removing obstacles and making access easier = facilitating support.",ar:"إزالة العقبات = دعم تسهيلي.",when:"لو السؤال عن 'إزالة العقبات' — الدعم التسهيلي."}},
+  {q:"Which model do BOTH Rothman AND Thomas share?",opts:["Community care","Service extension","Social planning","Community education"],ans:2,topic:"Comparing Models",exp:{en:"Both Rothman and Thomas include Social Planning as one of their models.",ar:"روثمان وتوماس كلاهما يشملان التخطيط الاجتماعي.",when:"لو السؤال عن 'نموذج مشترك بين روثمان وتوماس' — Social Planning."}},
+  {q:"How does Havrdova's definition relate to social justice?",opts:["Ignores social justice","Directly addresses justice by confronting discrimination and empowering the powerless","Only economic justice","Opposes social justice"],ans:1,topic:"Czech Definitions",exp:{en:"Havrdova directly addresses social justice by confronting discrimination and empowering powerless people.",ar:"هافردوفا تعالج العدالة الاجتماعية مباشرة.",when:"لو السؤال عن 'علاقة هافردوفا بالعدالة الاجتماعية' — تواجه التمييز وتمكّن الضعفاء."}},
+  {q:"How do Reznicek's 'stimulator' differ from 'organizer'?",opts:["Identical","Stimulator: motivates and inspires; Organizer: structures and coordinates","Organizer more important","Stimulator for individuals only"],ans:1,topic:"Czech Definitions",exp:{en:"Stimulator = inspiring and motivating people to act. Organizer = structuring and coordinating their actions.",ar:"المحفز = إلهام الناس. المنظم = هيكلة وتنسيق أفعالهم.",when:"لو السؤال يفرق بين 'المحفز' و'المنظم' — الأول يلهم والثاني ينظم."}},
+  {q:"How do the two main tasks (support + innovation) create balance?",opts:["They conflict","Support maintains existing communities; innovation pushes forward — balance of stability and progress","Only support matters","Innovation more important"],ans:1,topic:"Main Tasks",exp:{en:"Support = stability. Innovation = progress. Together = balanced practice.",ar:"الدعم = استقرار. الابتكار = تقدم. معاً = ممارسة متوازنة.",when:"لو السؤال عن 'كيف يتوازن الدعم والابتكار' — الاستقرار والتقدم معاً."}},
+  {q:"Havrdova's 'confronting discriminatory institutions' goes beyond individual help how?",opts:["Doesn't go beyond","Targets systemic/structural causes of inequality, not just individual symptoms","Only personal change","Ignores institutions"],ans:1,topic:"Czech Definitions",exp:{en:"Confronting institutions = targets systemic roots of discrimination, not just helping individuals cope.",ar:"مواجهة المؤسسات = تستهدف الجذور الهيكلية وليس فقط الأعراض الفردية.",when:"لو السؤال عن 'كيف تتجاوز هافردوفا المساعدة الفردية' — تستهدف الجذور الهيكلية."}},
+  {q:"What is the ultimate purpose of community work across all definitions?",opts:["Make money","Empower communities to achieve social justice and improve their lives","Replace government","Conduct research"],ans:1,topic:"Comparing Concepts",exp:{en:"All definitions point to one purpose: empowering communities to achieve positive social change.",ar:"كل التعريفات تشير لهدف واحد: تمكين المجتمعات لتحقيق تغيير اجتماعي إيجابي.",when:"لو السؤال عن 'الهدف النهائي للعمل المجتمعي' — التمكين والتغيير الاجتماعي."}},
+  {q:"What does 'communal coherence' protect against?",opts:["Poverty only","Fragmentation and breakdown of social bonds","Political opposition","Economic inequality only"],ans:1,topic:"Thomas's Three Aspects",exp:{en:"Communal coherence protects against fragmentation and breakdown of social bonds.",ar:"التماسك الجماعي يحمي من التفكك وانهيار الروابط الاجتماعية.",when:"لو السؤال عن 'ما يحمي منه التماسك' — التفكك الاجتماعي."}},
+  {q:"A community worker teaches activists how to negotiate with city hall. What aspect does this address?",opts:["Communal coherence only","Political responsibility — developing political skills","Service delivery","Community care"],ans:1,topic:"Thomas's Three Aspects",exp:{en:"Teaching negotiation with authorities = developing political responsibility.",ar:"تعليم التفاوض مع السلطات = تطوير المسؤولية السياسية.",when:"لو السؤال عن تعليم التعامل مع السلطات — المسؤولية السياسية."}},
+  {q:"How does Reznicek's 'cooperation with government' differ from 'dependence on government'?",opts:["Same thing","Cooperation = partnership while maintaining community autonomy; dependence = loss of autonomy","Dependence is better","Cooperation means government controls"],ans:1,topic:"Czech Definitions",exp:{en:"Cooperation = partnership that keeps community autonomous. Dependence = community loses its independent voice.",ar:"التعاون = شراكة مع الحفاظ على استقلالية المجتمع. الاعتماد = خسارة الاستقلالية.",when:"لو السؤال يفرق بين 'التعاون مع الحكومة' و'الاعتماد عليها' — الاستقلالية."}},
+  {q:"What is the role of 'forming relationships' in community work?",opts:["Not important","Essential — without trust and relationships, collective action is impossible","Only for networking","For personal gain"],ans:1,topic:"Objectives",exp:{en:"Forming relationships is essential — trust between worker, community, and groups enables collective action.",ar:"تكوين العلاقات ضروري — الثقة بين العامل والمجتمع والمجموعات تُمكّن التحرك الجماعي.",when:"لو السؤال عن 'أهمية تكوين العلاقات' — أساس التحرك الجماعي."}},
+  {q:"What does 'systems analysis' help Social Planning achieve?",opts:["Political campaigns","Understanding how social system components interact to find rational solutions","Building relationships","Funding acquisition"],ans:1,topic:"Rothman's Models",exp:{en:"Systems analysis = understanding how components of the social system interact, to find rational solutions.",ar:"تحليل الأنظمة = فهم كيف تتفاعل مكونات النظام الاجتماعي لإيجاد حلول عقلانية.",when:"لو السؤال عن 'ما يحقق تحليل الأنظمة في التخطيط' — فهم التفاعلات لإيجاد الحلول."}},
+  {q:"A community group identifies lack of childcare as their main problem. What step is this?",opts:["Activation","Equalization","Identification","Implementation"],ans:2,topic:"Objectives",exp:{en:"Identifying the problem (lack of childcare) = the 'identification' step in achieving objectives.",ar:"تحديد المشكلة (غياب رعاية الأطفال) = خطوة التعريف في تحقيق الأهداف.",when:"لو السؤال عن مرحلة تحديد المشكلة — التعريف (Identification)."}},
+  {q:"How does community education CREATE potential for community action?",opts:["It doesn't","Educated and aware citizens are better equipped to challenge injustice","Education replaces action","Action comes before education"],ans:1,topic:"Popple's Models",exp:{en:"Education builds awareness and skills — empowered, educated citizens are more capable of taking action.",ar:"التعليم يبني الوعي والمهارات — المواطنون الواعون والمتعلمون أكثر قدرة على التحرك.",when:"لو السؤال عن 'كيف يُهيئ التعليم للعمل' — يبني الوعي والمهارات."}},
+  {q:"How do Rothman's three models represent different theories of social change?",opts:["They're all the same","Development: change through consensus; Planning: change through expertise; Action: change through conflict"],ans:1,topic:"Rothman's Models",exp:{en:"Development=consensus change; Planning=expert-led rational change; Action=conflict-based power change.",ar:"تنمية=تغيير بالتوافق؛ تخطيط=تغيير بالخبرة؛ عمل=تغيير بالصراع.",when:"لو السؤال عن 'كيف تمثل نماذج روثمان نظريات تغيير مختلفة' — التوافق والخبرة والصراع."}},
+  {q:"Which combination of Popple models would best address both immediate needs AND long-term change?",opts:["Care only","Community care (immediate support) + Community action (long-term structural change)","Action only","Education only"],ans:1,topic:"Popple's Models",exp:{en:"Care addresses immediate needs; Action challenges structures causing those needs = comprehensive approach.",ar:"الرعاية تعالج الاحتياجات الفورية؛ العمل يتحدى الهياكل المسببة لها = نهج شامل.",when:"لو السؤال عن 'مجموعة نماذج تعالج الفوري والبُعيد معاً' — الرعاية + العمل."}},
+ 
+  // LEVEL 4
+  {q:"Critically, what makes community work distinct from individual social work?",opts:["More expensive","Addresses collective issues requiring group action, not just individual problems","Individual less important","Requires no qualifications"],ans:1,topic:"Critical Analysis",exp:{en:"Community work's defining feature: collective focus — works with groups on shared issues.",ar:"ما يميز العمل المجتمعي: التركيز الجماعي.",when:"لو السؤال عن 'ما يميز العمل المجتمعي عن الفردي' — التركيز الجماعي."}},
+  {q:"What theoretical tension exists between Rothman's Social Planning and Social Action?",opts:["No tension","Planning: rational systems work; Action: systems need challenging","Both reject community","Planning more modern"],ans:1,topic:"Critical Analysis",exp:{en:"Planning works within existing systems rationally. Action challenges those systems.",ar:"التخطيط يعمل داخل الأنظمة. العمل يتحدى تلك الأنظمة.",when:"لو السؤال عن 'التوتر بين التخطيط والعمل الاجتماعي' — الأول يعمل داخل النظام والثاني يتحداه."}},
+  {q:"How do Popple's 7 models reflect community work's complexity?",opts:["Simplifies everything","Shows it spans a spectrum from care/support to radical action","Shows it's simple","Limits to 7 activities"],ans:1,topic:"Critical Analysis",exp:{en:"7 models show community work spans from gentle care/support to radical challenges to power.",ar:"7 نماذج تُظهر الامتداد من الرعاية الناعمة للتحدي الجذري.",when:"لو السؤال عن 'ما تعكسه نماذج بوبل السبعة' — تعكس التعقيد والتنوع."}},
+  {q:"What is the epistemological problem with no single definition of community work?",opts:["Makes training easy","Creates difficulty in measuring outcomes, training workers, establishing standards","Benefits everyone","No consequences"],ans:1,topic:"Critical Analysis",exp:{en:"Without clear definition: how do we train workers, measure success, establish professional standards?",ar:"بدون تعريف واضح: كيف نتدرب ونقيس النجاح؟",when:"لو السؤال عن 'مشكلة غياب التعريف الواحد' — صعوبة التدريب والقياس والمعايير."}},
+  {q:"How does feminist community work challenge all other models?",opts:["Doesn't challenge","Adds gender lens revealing how other models may reproduce gender inequalities","Replaces all models","Focuses only on legal rights"],ans:1,topic:"Critical Analysis",exp:{en:"Feminist community work questions whether other models are truly neutral.",ar:"العمل النسوي يكشف تحيزات جندرية مخفية في النماذج الأخرى.",when:"لو السؤال عن 'كيف يتحدى العمل النسوي النماذج الأخرى' — يكشف تحيزاتها الجندرية."}},
+  {q:"What does Havrdova's 'change balance of power' imply about community work?",opts:["Politically neutral","Inherently political — seeks to redistribute power","Power irrelevant","Only governments change power"],ans:1,topic:"Critical Analysis",exp:{en:"Changing power balance = inherently political — community work seeks to redistribute power.",ar:"تغيير توازن القوى سياسي بطبيعته.",when:"لو السؤال عن 'ما تعنيه فكرة تغيير توازن القوى' — العمل المجتمعي سياسي بطبيعته."}},
+  {q:"If you assign one Rothman model to Havrdova's definition, which would it be?",opts:["Local development","Social planning","Social action","Community care"],ans:2,topic:"Critical Analysis",exp:{en:"Havrdova (changing power, confronting discrimination, empowering powerless) aligns most with Social Action.",ar:"هافردوفا يتوافق أكثر مع العمل الاجتماعي (Social Action).",when:"لو السؤال يربط هافردوفا بنموذج روثمان — Social Action."}},
+  {q:"Placing Rothman's models on political spectrum from least to most radical, what is the order?",opts:["Action, Planning, Development","Development, Planning, Action","Planning, Development, Action","Action, Development, Planning"],ans:1,topic:"Critical Analysis",exp:{en:"Least to most radical: Local Development → Social Planning → Social Action.",ar:"الأقل للأكثر راديكالية: التنمية المحلية → التخطيط → العمل الاجتماعي.",when:"لو السؤال عن 'ترتيب نماذج روثمان من الأقل للأكثر راديكالية' — تنمية ثم تخطيط ثم عمل."}},
+  {q:"What does 'systems analysis' in Social Planning assume about society?",opts:["Society is irrational","Society functions like a system with interrelated parts that can be rationally analyzed","Society cannot change","Only experts understand society"],ans:1,topic:"Critical Analysis",exp:{en:"Systems analysis assumes society has interrelated parts that can be rationally studied and improved.",ar:"تحليل الأنظمة يفترض أن المجتمع أجزاء مترابطة قابلة للدراسة.",when:"لو السؤال عن 'افتراضات تحليل الأنظمة' — المجتمع نظام مترابط قابل للدراسة."}},
+  {q:"What distinguishes a professional community worker from a well-meaning volunteer?",opts:["Only salary","Training, ethical framework, systematic approach, accountability","Volunteers can't do community work","Professionals ignore communities"],ans:1,topic:"Critical Analysis",exp:{en:"Professionals: formal training + ethical standards + systematic methods + professional accountability.",ar:"المحترف: تدريب + أخلاقيات + أساليب منهجية + مساءلة.",when:"لو السؤال يفرق بين المحترف والمتطوع — المحترف لديه تدريب ومعايير ومساءلة."}},
+  {q:"What is the paradox in community work being an 'umbrella term'?",opts:["No paradox","Flexibility (applies anywhere) + lack of clarity (unclear meaning) = professional identity crisis","Umbrella always better","Identity doesn't matter"],ans:1,topic:"Critical Analysis",exp:{en:"Paradox: flexibility + lack of clarity = professional identity crisis.",ar:"المفارقة: مرونة + غياب الوضوح = أزمة هوية مهنية.",when:"لو السؤال عن 'مفارقة المصطلح الشامل' — المرونة مقابل غياب الوضوح."}},
+  {q:"How does 'community coherence' serve as a PRECONDITION for community work?",opts:["Not needed","Without unity, collective action and sustained change are impossible","Only for governments","Individual change enough"],ans:1,topic:"Critical Analysis",exp:{en:"Without cohesion, collective action breaks down.",ar:"بدون التماسك، التحرك الجماعي ينهار.",when:"لو السؤال عن 'التماسك كشرط مسبق' — بدونه لا يمكن التحرك الجماعي."}},
+  {q:"Reznicek's need for 'cooperation with government' reveals what about community work?",opts:["Controlled by government","Often requires working within political structures while empowering communities","Government always supports it","Avoids government completely"],ans:1,topic:"Critical Analysis",exp:{en:"Community work isn't purely confrontational — often needs to work within political structures.",ar:"العمل المجتمعي ليس دائماً تحدياً — يحتاج أحياناً للعمل داخل الهياكل السياسية.",when:"لو السؤال عن 'ما يكشفه احتياج رزنيتشيك للتعاون الحكومي' — العمل المجتمعي ليس دائماً مواجهاً."}},
+  {q:"How do Popple's 'community care' and 'community action' represent opposite ends?",opts:["Both radical","Care: meets needs within system (conservative); Action: challenges the system (radical)","Action more caring than care","Both avoid politics"],ans:1,topic:"Critical Analysis",exp:{en:"Care = meeting needs within existing system. Action = challenging the system.",ar:"الرعاية = تلبي الاحتياجات داخل النظام. العمل = يتحدى النظام.",when:"لو السؤال يضع Care وAction على طرفي النقيض — الرعاية محافظة والعمل راديكالي."}},
+  {q:"Why is Havrdova's 1993 definition still relevant today?",opts:["Outdated","Power, discrimination, and empowerment remain central to modern social justice","Modern work ignores power","Only new definitions matter"],ans:1,topic:"Critical Analysis",exp:{en:"Power, discrimination, and empowerment remain central issues in modern social justice work.",ar:"القوة والتمييز والتمكين قضايا محورية في العمل الاجتماعي المعاصر.",when:"لو السؤال عن 'لماذا هافردوفا لا تزال مهمة' — قضاياها مستمرة."}},
+  {q:"How does Hartl's 'coping with social change' differ from 'creating change as a goal'?",opts:["Identical","Coping: reactive (responding); Creating: proactive (making change happen)","Coping more radical","Goals don't matter"],ans:1,topic:"Critical Analysis",exp:{en:"Coping = reacting to happening changes. Creating change = proactively working to make new changes happen.",ar:"التعامل = استجابة. إحداث التغيير = مبادرة.",when:"لو السؤال يفرق بين 'التعامل مع التغيير' و'إحداث التغيير' — الأول استجابة والثاني مبادرة."}},
+  {q:"If Thomas's 'communal coherence' was missing, how would it affect the other two aspects?",opts:["No effect","Without coherence, collective action and political responsibility cannot be sustained","Political gets stronger","Individual more powerful"],ans:1,topic:"Critical Analysis",exp:{en:"Without coherence (unity), communities can't sustain collective action or political responsibility.",ar:"بدون التماسك، لا يمكن الحفاظ على التحرك والمسؤولية.",when:"لو السؤال عن 'أثر غياب التماسك على الجوانب الأخرى' — ينهار التحرك والمسؤولية."}},
+  {q:"Popple includes BOTH 'community organization' and 'community development'. What's the significance?",opts:["Same thing","Organization: coordinates existing; Development: builds new capacity — both needed","Organization more important","Development replaces organization"],ans:1,topic:"Critical Analysis",exp:{en:"Both needed: Organization uses what exists now; Development builds future capacity.",ar:"التنظيم يستخدم الموجود؛ التطوير يبني المستقبل — كلاهما ضروري.",when:"لو السؤال عن 'أهمية وجود التنظيم والتطوير معاً' — تكاملان لتحقيق التغيير المستدام."}},
+  {q:"What epistemological shift does community work make vs traditional social work?",opts:["No shift","From expert-knows-best to community participation and self-determination","Community work more authoritative","Traditional better"],ans:1,topic:"Critical Analysis",exp:{en:"Traditional: expert defines problem and solution. Community work: community defines its own needs.",ar:"التقليدي: الخبير يحدد. العمل المجتمعي: المجتمع يحدد.",when:"لو السؤال عن 'التحول المعرفي في العمل المجتمعي' — من الخبير للمجتمع."}},
+  {q:"Majority adoption in community planning: what is the limitation?",opts:["No limitation","Majority adoption can marginalize minority views","Minorities always agree","Majority doesn't matter"],ans:1,topic:"Critical Analysis",exp:{en:"Majority adoption is democratic but can marginalize minority views.",ar:"تبني الأغلبية ديمقراطي لكن قد يهمّش الأقليات.",when:"لو السؤال عن 'قيد تبني الأغلبية' — إمكانية تهميش الأقليات."}},
+  {q:"Synthesizing all Czech definitions, what comprehensive definition emerges?",opts:["Just helping individuals","Mobilizes citizens, helps cope with change, empowers powerless to challenge discrimination","Government program only","Only services"],ans:1,topic:"Critical Analysis",exp:{en:"Combined: mobilizing citizens (Reznicek) + coping with change (Hartl) + empowering powerless (Havrdova).",ar:"تعبئة المواطنين + التعامل مع التغيير + تمكين الضعفاء.",when:"لو السؤال عن 'التعريف الشامل من الكتّاب الثلاثة' — الجمع بين الثلاثة."}},
+  {q:"How does Rothman's 'local development' align with 'capacity building'?",opts:["Doesn't align","Leadership development + participant education = building community's own capacity","Only governments build capacity","Separate concepts"],ans:1,topic:"Critical Analysis",exp:{en:"Local development's emphasis on leadership and education = building the community's own capacity.",ar:"التنمية المحلية = بناء قدرة المجتمع على إدارة نفسه.",when:"لو السؤال يربط 'التنمية المحلية' ببناء القدرات — القيادة والتعليم هما الأداة."}},
+  {q:"What is the ULTIMATE vision of community work across all definitions and models?",opts:["Dependent communities","Empower communities to become self-managing agents of their own change","Replace government","Provide charity"],ans:1,topic:"Critical Analysis",exp:{en:"Ultimate vision: communities that are self-managing, empowered, politically aware, coherent agents of change.",ar:"الرؤية النهائية: مجتمعات تدير نفسها وتحقق تغييرها بنفسها.",when:"لو السؤال عن 'الرؤية النهائية للعمل المجتمعي' — مجتمعات مستقلة وممكّنة."}}
+];
+ 
+// ===== LEVEL 4 — EXCELLENCE — 50 brand-new hard questions =====
+// Answers are deliberately similar to each other to make it challenging
+var LVL4_Q=[
+  {q:"Rothman distinguishes Local Development from Social Planning primarily because Local Development relies on:",opts:["Rational expert-led analysis","Consensus-building through participation","Technical systems research","Policy reform through legislation"],ans:1,exp:{en:"Local Development = participation and consensus. Social Planning = rational expert analysis.",ar:"التنمية المحلية = مشاركة وتوافق. التخطيط = تحليل عقلاني بالخبراء.",when:"الفرق الجوهري: التنمية محلية تعتمد المشاركة، التخطيط يعتمد الخبراء."}},
+  {q:"Which best captures why 'Social Action' is considered the most politically charged of Rothman's models?",opts:["It uses negotiation to reach agreements","It works within existing institutional frameworks","It challenges power structures and seeks redistribution","It coordinates existing services more efficiently"],ans:2,exp:{en:"Social Action directly challenges power and seeks redistribution — inherently political.",ar:"العمل الاجتماعي يتحدى السلطة مباشرة ويسعى لإعادة توزيعها.",when:"الأكثر سياسية = العمل الاجتماعي لأنه يتحدى السلطة."}},
+  {q:"Popple's 'community care' is best described as:",opts:["Radical challenge to institutional power","Direct provision of support to vulnerable people within the community","Long-term capacity building for self-sufficiency","Strategic confrontation of discriminatory policies"],ans:1,exp:{en:"Community care = direct support to vulnerable people within their own community.",ar:"رعاية المجتمع = دعم مباشر للأشخاص الهشين داخل مجتمعهم.",when:"لو السؤال عن Community Care — دعم مباشر، مش تغيير هيكلي."}},{q:"The concept of 'self-management' in community work is MOST closely related to which theoretical principle?",opts:["Dependency theory","Empowerment and community autonomy","Expert-led rational planning","Institutional coordination"],ans:1,exp:{en:"Self-management = empowerment — communities become autonomous agents of their own affairs.",ar:"إدارة الذات = تمكين — المجتمعات تصبح مستقلة في إدارة شؤونها.",when:"إدارة الذات مرتبطة بالتمكين والاستقلالية."}},
+  {q:"Havrdova's emphasis on 'confronting discriminatory institutions' places her definition closest to which Rothman model?",opts:["Local Development — building community consensus","Social Planning — rational coordination of services","Social Action — challenging power and institutional policies","Community Care — direct individual support"],ans:2,exp:{en:"Confronting institutions = Social Action (challenging power and policies).",ar:"مواجهة المؤسسات التمييزية = العمل الاجتماعي.",when:"هافردوفا + مواجهة = Social Action."}},
+  {q:"Which statement BEST distinguishes 'community development' from 'community organization' in Popple's framework?",opts:["Development coordinates; organization builds","Organization uses existing groups; development builds new long-term capacity","Both are identical in function","Development is conservative; organization is radical"],ans:1,exp:{en:"Organization = coordinates existing. Development = builds future capacity.",ar:"التنظيم ينسق الموجود؛ التطوير يبني المستقبل.",when:"التنظيم للحاضر، التطوير للمستقبل."}},
+  {q:"The 'umbrella term' critique of community work primarily argues that:",opts:["Community work is too expensive to implement","The lack of a unified definition undermines professional identity and measurability","Community work should focus only on specific populations","The field has too many academic theories"],ans:1,exp:{en:"Umbrella term = no clear definition = unclear professional identity and hard to measure outcomes.",ar:"مصطلح شامل = لا تعريف موحد = هوية مهنية ضبابية وصعوبة في القياس.",when:"نقد المصطلح الشامل دايماً عن الهوية المهنية والقياس."}},
+  {q:"Thomas's 'political responsibility' aspect most directly develops citizens':",opts:["Economic independence","Awareness of rights, duties, and capacity to engage with power","Technical skills in community planning","Ability to provide direct care to others"],ans:1,exp:{en:"Political responsibility = developing citizens' awareness of rights, duties, and engagement with power.",ar:"المسؤولية السياسية = وعي المواطنين بحقوقهم وواجباتهم وتعاملهم مع السلطة.",when:"المسؤولية السياسية دايماً عن الحقوق والواجبات."}},
+  {q:"'Activation' as a step toward community work objectives differs from 'identification' in that:",opts:["Identification motivates; activation names the problem","Activation energizes and mobilizes people; identification names and defines the problem","They are the same step with different names","Activation comes after identification always"],ans:1,exp:{en:"Activation = mobilizing people. Identification = naming and defining the problem.",ar:"التفعيل = تحريك الناس. التعريف = تسمية المشكلة وتحديدها.",when:"التفعيل للتحريك، التعريف للتحديد."}},
+  {q:"Which of the following BEST represents the 'equalizing tension between needs' step?",opts:["Identifying which community group has the most members","Balancing competing priorities across different community needs over time","Providing equal funding to all community groups","Eliminating all community tensions permanently"],ans:1,exp:{en:"Equalizing tension = balancing different needs — no single need dominates at the expense of others.",ar:"موازنة التوتر = توازن الاحتياجات المختلفة — لا احتياج يسيطر على حساب الآخرين.",when:"موازنة التوتر = توازن الاحتياجات المتنافسة."}},
+  {q:"Reznicek's definition is unique compared to Hartl's because Reznicek specifically emphasizes:",opts:["Coping with ongoing social change","Mobilizing self-help and requiring cooperation with political authorities","Empowering powerless people to assert their skills","Confronting discriminatory attitudes and behaviors"],ans:1,exp:{en:"Reznicek = mobilization + self-help + cooperation with political authorities.",ar:"رزنيتشيك = تعبئة + مساعدة ذاتية + تعاون مع السلطة السياسية.",when:"ما يميز رزنيتشيك: التعبئة + التعاون مع السلطة."}},
+  {q:"A community worker who helps a neighborhood group draft a constitution and assign roles is providing:",opts:["Strategic support — guiding long-term direction","Facilitating support — removing obstacles","Educational support — developing knowledge","Organizational support — building internal structures"],ans:3,exp:{en:"Drafting a constitution and assigning roles = building internal structure = Organizational support.",ar:"وضع دستور وتوزيع أدوار = بناء هيكل داخلي = دعم تنظيمي.",when:"دستور + أدوار + هيكل = دعم تنظيمي."}},
+  {q:"'Strategic support' differs from 'organizational support' in that strategic support focuses on:",opts:["Current group structure and internal rules","Immediate problem-solving tasks","Long-term direction, vision, and planning","Teaching new skills to members"],ans:2,exp:{en:"Strategic = long-term direction and vision. Organizational = current structure and rules.",ar:"الاستراتيجي = رؤية وتخطيط بعيد المدى. التنظيمي = الهيكل الحالي.",when:"استراتيجي = المستقبل البعيد. تنظيمي = الهيكل الحالي."}},
+  {q:"When Havrdova states community work helps the 'powerless discover and assert their skills', she is describing a process most similar to:",opts:["Rational social planning","Empowerment and capacity recognition","Institutional coordination","Service extension to excluded groups"],ans:1,exp:{en:"Discovering and asserting skills = empowerment and capacity recognition.",ar:"اكتشاف وإثبات المهارات = تمكين واعتراف بالقدرات.",when:"هافردوفا + اكتشاف المهارات = التمكين."}},
+  {q:"The process of 'forming relationships' is a prerequisite for community work because:",opts:["It is required by professional regulations","Without trust and relationships, collective action cannot be sustained","It helps workers gain professional credentials","Relationship data is needed for research"],ans:1,exp:{en:"Relationships = trust = foundation for collective action.",ar:"العلاقات = ثقة = أساس التحرك الجماعي.",when:"تكوين علاقات ضروري لأنه أساس الثقة والتحرك الجماعي."}},
+  {q:"Social Planning's use of 'systems analysis' assumes which of the following about communities?",opts:["Communities are inherently irrational and need expert control","Communities are systems with interrelated parts that can be rationally studied and improved","Communities are too complex for any systematic analysis","Only government can understand community systems"],ans:1,exp:{en:"Systems analysis = assumes society is a system with interrelated parts — rational study leads to improvement.",ar:"تحليل الأنظمة = المجتمع منظومة أجزاء مترابطة — الدراسة العقلانية تؤدي للتحسين.",when:"تحليل الأنظمة = المجتمع منظومة قابلة للدراسة."}},
+  {q:"Feminist community work is distinct from 'community action' in Popple's framework primarily because:",opts:["Community action is more radical than feminist work","Feminist work uses gender as an explicit analytical lens; community action focuses on general power","They serve identical functions","Feminist work avoids challenging institutions"],ans:1,exp:{en:"Feminist = uses gender as explicit lens. Community action = challenges power generally.",ar:"النسوي = يستخدم النوع الاجتماعي كمنظور. العمل المجتمعي = يتحدى السلطة بشكل عام.",when:"الفرق: النسوي له منظور جندري صريح."}},
+  {q:"Which scenario would MOST appropriately call for Rothman's 'Local Development' model?",opts:["Fighting a discriminatory government housing policy through legal action","Coordinating mental health services across multiple agencies","Building a neighborhood residents' association to address local issues","Confronting corporate pollution in a community park"],ans:2,exp:{en:"Local Development = building community participation and leadership around shared local issues.",ar:"التنمية المحلية = بناء مشاركة ورابطة محلية لمعالجة قضايا مشتركة.",when:"التنمية المحلية = بناء مشاركة ورابطة محلية."}},
+  {q:"The 'co-ordination of social services' that Social Planning originally focused on implies:",opts:["Challenging existing service providers","Organizing services so they work together efficiently for maximum community benefit","Creating entirely new services from scratch","Eliminating inefficient service providers"],ans:1,exp:{en:"Coordination = organizing existing services to work efficiently together.",ar:"التنسيق = تنظيم الخدمات الموجودة لتعمل بكفاءة مع بعضها.",when:"تنسيق الخدمات = تنظيم الموجود للعمل معاً."}},
+  {q:"Thomas's three aspects (action, political responsibility, communal coherence) function best when:",opts:["Each operates independently","They reinforce each other — action builds coherence, coherence enables political responsibility","Only the first two are emphasized","Communal coherence comes first, then the others follow"],ans:1,exp:{en:"They are mutually reinforcing — each aspect strengthens the others.",ar:"تعزز بعضها — كل جانب يقوي الآخرين.",when:"الجوانب الثلاثة تعمل معاً ومتكاملة."}},
+  {q:"'Community planning' in Popple emphasizes majority adoption of outcomes because:",opts:["Majority decisions are legally binding","Majority adoption ensures the outcome has genuine community ownership and sustainability","It is easier to implement majority decisions","Minority views should always be ignored"],ans:1,exp:{en:"Majority adoption = genuine community ownership = sustainability.",ar:"تبني الأغلبية = ملكية مجتمعية حقيقية = استدامة.",when:"الأغلبية في التخطيط = ملكية مجتمعية وليس مجرد تصويت."}},
+  {q:"A critical limitation of community planning's 'majority adoption' principle is:",opts:["It makes decision-making too slow","It can systematically exclude and marginalize minority voices","It is too radical for government acceptance","It requires too many resources"],ans:1,exp:{en:"Majority principle can marginalize minorities — democratic but potentially exclusionary.",ar:"مبدأ الأغلبية قد يهمّش الأقليات — ديمقراطي لكن قد يُقصي.",when:"عيب الأغلبية = تهميش الأقليات."}},
+  {q:"Reznicek's requirement for workers to cooperate with 'political authority' while serving communities reveals that:",opts:["Community workers must obey government orders","Effective community work often navigates between empowering communities and engaging political structures","Political authority is always the true client","Community autonomy is less important than political compliance"],ans:1,exp:{en:"Navigating between community empowerment and political engagement = complex professional role.",ar:"التنقل بين تمكين المجتمع والتعامل مع السياسة = دور مهني معقد.",when:"رزنيتشيك + السلطة = التعامل مع السياسة دون فقدان الاستقلالية."}},
+  {q:"Hartl's definition of community work as 'coping with social change' positions the worker primarily as:",opts:["An agent creating radical social transformation","A responsive practitioner helping communities adapt and navigate change","A political activist challenging power structures","A neutral technical expert coordinating services"],ans:1,exp:{en:"Coping = responsive, adaptive — helping communities navigate change rather than creating it.",ar:"التعامل مع التغيير = استجابي تكيفي — مساعدة المجتمعات على الملاحة.",when:"هارتل = استجابة وتكيف وليس إحداث التغيير."}},
+  {q:"The principle that 'community work must confront discriminatory institutions' (Havrdova) implies the worker must sometimes:",opts:["Work exclusively within existing systems","Challenge organizational cultures and policies that perpetuate inequality","Avoid political engagement","Focus only on individual empowerment"],ans:1,exp:{en:"Confronting institutions = challenging organizational cultures and policies that perpetuate inequality.",ar:"مواجهة المؤسسات = تحدي ثقافاتها وسياساتها التي تكرّس التمييز.",when:"مواجهة المؤسسات = تحدي سياساتها الداخلية."}},
+  {q:"'Categorical' community work with elderly residents in a specific town could ALSO be classified as 'territorial' when:",opts:["The elderly residents have political influence","The work is specifically located in and tailored to that town's geographic context","The worker is a local resident","The program is funded by local government"],ans:1,exp:{en:"When work with a specific group is also tied to a specific geographic area = both categorical AND territorial.",ar:"لما العمل مع فئة محددة مرتبط بمنطقة جغرافية = تصنيفي وإقليمي معاً.",when:"عمل مع فئة في منطقة محددة = تصنيفي + إقليمي."}},
+  {q:"Among Popple's seven models, 'community education' uniquely contributes to social change by:",opts:["Directly challenging power structures","Building awareness and critical consciousness that creates potential for future action","Coordinating services for vulnerable populations","Organizing groups around shared political goals"],ans:1,exp:{en:"Community education = builds awareness and consciousness — indirect path to change.",ar:"التعليم المجتمعي = يبني الوعي والوعي النقدي — طريق غير مباشر للتغيير.",when:"التعليم المجتمعي = وعي نقدي → قدرة على التحرك مستقبلاً."}},
+  {q:"The 'innovation' task of community workers involves:",opts:["Improving existing programs incrementally","Identifying emerging community needs and stimulating entirely new responses","Evaluating whether existing services are cost-effective","Reporting community data to government agencies"],ans:1,exp:{en:"Innovation = identifying new needs and stimulating new responses — not just improving what exists.",ar:"الابتكار = تحديد احتياجات جديدة وتحفيز استجابات جديدة.",when:"الابتكار = الجديد الكلي، مش التحسين التدريجي."}},
+  {q:"Comparing Rothman's Social Planning to Popple's community planning, the key shared feature is:",opts:["Both challenge existing power structures","Both use dialogue and negotiation as primary tools","Both emphasize rational analysis and systematic approaches to problem-solving","Both focus exclusively on local geographic communities"],ans:2,exp:{en:"Both Social Planning (Rothman) and community planning (Popple) use systematic, rational approaches.",ar:"كلاهما يستخدم مناهج منهجية وعقلانية لحل المشاكل.",when:"القاسم المشترك بين التخطيطين = المنهجية العقلانية."}},
+  {q:"'Facilitating support' is BEST illustrated by a community worker who:",opts:["Teaches residents new advocacy skills","Helps the group create a five-year strategic plan","Removes bureaucratic barriers so the group can access a government grant","Helps the group elect officers and establish committees"],ans:2,exp:{en:"Removing barriers = facilitating support.",ar:"إزالة العقبات = دعم تسهيلي.",when:"إزالة العقبات البيروقراطية = دعم تسهيلي."}},
+  {q:"Social Action in Rothman's model would LEAST likely involve:",opts:["Public demonstrations and protests","Lobbying government for policy change","Coordinating social services through inter-agency meetings","Media campaigns to challenge institutional discrimination"],ans:2,exp:{en:"Coordinating services = Social Planning, not Social Action.",ar:"تنسيق الخدمات = التخطيط الاجتماعي، مش العمل الاجتماعي.",when:"تنسيق الخدمات = التخطيط لا العمل الاجتماعي."}},
+  {q:"The reason community work is described as 'inherently political' by Havrdova is that:",opts:["Workers must join political parties","It seeks to change power relationships which are fundamentally political in nature","It requires government funding","Workers must advocate for specific political ideologies"],ans:1,exp:{en:"Changing power relationships is political by nature — community work is inherently political.",ar:"تغيير علاقات السلطة سياسي بطبيعته — العمل المجتمعي سياسي جوهرياً.",when:"سياسي بطبيعته لأنه يتعامل مع علاقات السلطة."}},
+  {q:"Which statement BEST explains why short-term project funding is problematic for community work?",opts:["Short-term projects are more expensive per outcome","Community change requires sustained relationship-building and trust over time","Short-term funders are less experienced","Government prefers long-term funding"],ans:1,exp:{en:"Community change = sustained effort. Short-term funding disrupts continuity and relationship-building.",ar:"تغيير المجتمع يحتاج جهد مستمر. التمويل قصير يقطع الاستمرارية وبناء العلاقات.",when:"التمويل القصير مشكلة لأن التغيير يحتاج وقت واستمرارية."}},
+  {q:"Popple's feminist community work diverges from community action primarily in its:",opts:["Greater willingness to use direct confrontation","Explicit use of gender as an analytical frame revealing hidden structural inequalities","Focus on economic rather than social change","Rejection of political engagement"],ans:1,exp:{en:"Feminist = explicit gender frame. Community action = challenges power generally without gender-specific analysis.",ar:"النسوي = منظور جندري صريح. العمل المجتمعي = تحدي السلطة بشكل عام.",when:"النسوي يتميز بالمنظور الجندري الصريح."}},
+  {q:"Across ALL definitions reviewed (Popple, Rothman, Thomas, Czech authors), the ONE shared assumption is:",opts:["Community workers must be political activists","Communities can and should play an active role in shaping their own conditions","Expert knowledge always supersedes community knowledge","Government is the primary agent of social change"],ans:1,exp:{en:"All definitions share: communities are active agents of their own change.",ar:"جميع التعريفات تشترك: المجتمعات وكلاء فاعلون في تغيير أوضاعها.",when:"القاسم المشترك بين كل التعريفات = المجتمع وكيل فاعل."}},
+  {q:"The distinction between 'coping with social change' (Hartl) and 'facilitating social change' (Havrdova) reflects:",opts:["A disagreement about whether community work is useful","Different roles — reactive adaptation versus proactive transformation","A difference in target population","A difference in funding sources"],ans:1,exp:{en:"Hartl = reactive (coping). Havrdova = proactive (facilitating/creating change).",ar:"هارتل = استجابي (تعامل). هافردوفا = استباقي (تسهيل/إحداث التغيير).",when:"هارتل مقابل هافردوفا = استجابة مقابل استباق."}},
+  {q:"Community work's emphasis on 'collective problems' rather than 'individual problems' implies:",opts:["Individual needs are unimportant","Structural causes affecting groups require collective responses, not just individual interventions","Individuals are responsible for their own problems","Only large communities can benefit"],ans:1,exp:{en:"Collective problems = structural causes affecting groups = need collective responses.",ar:"المشاكل الجماعية = أسباب هيكلية تؤثر على مجموعات = تحتاج استجابات جماعية.",when:"جماعي = هيكلي يحتاج استجابة جماعية."}},
+  {q:"A worker helping residents analyze WHY their neighborhood lacks green spaces is at which step?",opts:["Activation — mobilizing residents to act","Identification — defining the problem and its structural causes","Equalization — balancing competing needs","Implementation — carrying out planned actions"],ans:1,exp:{en:"Analyzing why a problem exists = identification step.",ar:"تحليل سبب وجود المشكلة = خطوة التعريف.",when:"'ليه' = تعريف وتحليل المشكلة."}},
+  {q:"Rothman's model most applicable to publishing research on the impact of poverty on a neighborhood, and using findings to redesign social services, is:",opts:["Social Action — direct challenge to power","Local Development — building community participation","Social Planning — rational evidence-based service redesign","Community Education — building awareness"],ans:2,exp:{en:"Research + evidence + service redesign = Social Planning.",ar:"بحث + أدلة + إعادة تصميم الخدمات = التخطيط الاجتماعي.",when:"بحث ثم تصميم خدمات بناءً على الأدلة = التخطيط الاجتماعي."}},
+  {q:"The concept of 'communal coherence' (Thomas) is MOST threatened by:",opts:["Strong community leadership","Diverse stakeholder participation","Internal fragmentation, mistrust, and breakdown of shared identity","Excessive government funding"],ans:2,exp:{en:"Communal coherence is threatened by fragmentation, mistrust, and breakdown of shared identity.",ar:"التماسك الجماعي مهدد بالتفكك وانعدام الثقة وانهيار الهوية المشتركة.",when:"ما يهدد التماسك = التفكك وانعدام الثقة."}},
+  {q:"'Thematic' community work addressing drug addiction in a city would differ from 'territorial' work in the same city because:",opts:["Thematic work only operates in rural areas","Thematic work focuses on the issue regardless of geography; territorial work is location-specific","Thematic work always involves more funding","Territorial work is more politically radical"],ans:1,exp:{en:"Thematic = issue-focused regardless of location. Territorial = location-specific.",ar:"موضوعاتي = ركز على القضية بغض النظر عن المكان. إقليمي = مرتبط بالمكان.",when:"موضوعاتي = القضية فوق الجغرافيا. إقليمي = المكان أولاً."}},
+  {q:"Which pairing INCORRECTLY matches a support type with its function?",opts:["Educational support — teaching skills and knowledge","Strategic support — long-term planning and vision","Organizational support — removing bureaucratic obstacles","Facilitating support — making action easier for communities"],ans:2,exp:{en:"Organizational support = building structures (committees, rules). Facilitating = removing obstacles.",ar:"الدعم التنظيمي = بناء هياكل. التسهيلي = إزالة العقبات. الخطأ: نسب إزالة العقبات للتنظيمي.",when:"الخطأ: 'إزالة العقبات' ده التسهيلي مش التنظيمي."}},
+  {q:"Reznicek's vision of citizens becoming 'activists and active inhabitants' implies which shift?",opts:["From individual client to active community participant","From community participant to professional expert","From government control to international governance","From passive observer to academic researcher"],ans:0,exp:{en:"Citizens as activists = shift from passive recipients to active community participants.",ar:"المواطنون كناشطين = تحول من متلقين سلبيين لمشاركين فاعلين.",when:"رزنيتشيك: المواطن من سلبي لناشط فاعل."}},
+  {q:"The sequence of steps: analyze conditions → set goals → design programs → mobilize resources → implement → evaluate, belongs to:",opts:["Thomas's three aspects of community work","Rothman's Local Development model","Popple's social/community planning process","Havrdova's empowerment framework"],ans:2,exp:{en:"This six-step sequence = Popple's social/community planning process.",ar:"هذه الخطوات الست = عملية التخطيط المجتمعي عند بوبل.",when:"الخطوات الست = التخطيط المجتمعي عند بوبل."}},
+  {q:"'Community organization' in Popple's framework primarily serves to:",opts:["Replace ineffective government agencies","Coordinate existing community groups to achieve goals impossible for any single group alone","Confront and challenge institutional power","Provide direct care to vulnerable individuals"],ans:1,exp:{en:"Community organization = coordinating existing groups for collective goals no single group can achieve alone.",ar:"تنظيم المجتمع = تنسيق المجموعات لتحقيق أهداف مستحيلة لمجموعة وحدها.",when:"تنظيم المجتمع = قوة التنسيق الجماعي."}},
+  {q:"Popple describes community work as an 'umbrella term' because it encompasses activities as different as:",opts:["Medical treatment and legal advocacy","Visiting housebound people, working in deprived areas, and intervening with young offenders","Academic research and policy writing","Financial planning and investment management"],ans:1,exp:{en:"Popple's examples: visiting housebound, deprived areas, young offenders — very different activities.",ar:"أمثلة بوبل: زيارة المقيمين بمنازلهم، المناطق المحرومة، الجانحين الشباب — أنشطة مختلفة جداً.",when:"أمثلة الشمسية عند بوبل = زيارة + مناطق محرومة + جانحون."}},
+  {q:"The concept of 'asserting skills' in Havrdova's definition refers to:",opts:["Formally certifying professional qualifications","Powerless people gaining confidence to demonstrate and advocate for their capabilities","Workers promoting their own expertise","Communities adopting written skill development plans"],ans:1,exp:{en:"Asserting skills = powerless people gaining confidence to demonstrate their capabilities.",ar:"إثبات المهارات = الضعفاء يكتسبون الثقة لإظهار قدراتهم.",when:"'إثبات المهارات' = ثقة الضعفاء في إظهار قدراتهم."}},
+  {q:"Which of the following scenarios represents the MOST complex application of community work principles?",opts:["A worker visits elderly residents at home","A worker teaches youth about their legal rights","A worker simultaneously builds community participation, challenges discriminatory policies, and coordinates social services","A worker writes a grant application for a community center"],ans:2,exp:{en:"Simultaneous participation + challenge + coordination = highest complexity, combining multiple models.",ar:"مشاركة + تحدي + تنسيق في نفس الوقت = أعلى تعقيد، يجمع نماذج متعددة.",when:"التعقيد الأعلى = دمج نماذج متعددة في وقت واحد."}},
+  {q:"Social Planning and Local Development share the common characteristic of:",opts:["Both seek to overthrow existing power structures","Both work within existing social systems aiming to improve them","Both rely exclusively on government funding","Both use confrontational tactics with institutions"],ans:1,exp:{en:"Both work WITHIN existing systems — neither seeks to overthrow the system.",ar:"كلاهما يعمل داخل النظام القائم — لا يسعى أي منهما للإطاحة بالنظام.",when:"التخطيط والتنمية = كلاهما يعمل داخل النظام."}},
+  {q:"A community worker notices their organization's 'professional norms' are creating distance from the community they serve. This reflects the tension between:",opts:["Strategic and organizational support","Professional standing and community credibility (street credibility)","Local development and social action","Thematic and territorial approaches"],ans:1,exp:{en:"Professional norms creating distance = tension between professional standing and street credibility.",ar:"الأعراف المهنية تخلق مسافة = توتر بين الاحترافية والمصداقية الشعبية.",when:"مسافة بسبب الأعراف المهنية = توتر الاحترافية والمصداقية."}},
+  {q:"The 'multidisciplinary' nature of community work means it draws from all EXCEPT:",opts:["Social work and community development","Political science and sociology","Quantum physics and molecular biology","Psychology and adult education"],ans:2,exp:{en:"Community work draws from social work, development, political science, sociology, psychology, education — NOT hard sciences.",ar:"العمل المجتمعي يستعين من: الخدمة الاجتماعية، السياسة، علم النفس، التعليم — ليس العلوم الطبيعية.",when:"متعدد التخصصات = علوم اجتماعية وإنسانية، ليس العلوم الطبيعية."}},
+  {q:"The DEEPEST difference between Rothman's Social Action and Social Planning lies in their:",opts:["Target populations","Underlying theory of how social change happens","Funding sources","Geographic focus areas"],ans:1,exp:{en:"Social Action = change through conflict/power challenge. Social Planning = change through rational expertise.",ar:"العمل الاجتماعي = تغيير بالصراع. التخطيط = تغيير بالعقلانية والخبرة.",when:"الفرق الأعمق = نظرية التغيير: صراع مقابل عقلانية."}},
+  {q:"Placing all community work on a continuum from 'consensus-based' to 'conflict-based', the correct order from left (consensus) to right (conflict) is:",opts:["Social Action → Social Planning → Local Development","Local Development → Social Planning → Social Action","Social Planning → Local Development → Social Action","Local Development → Social Action → Social Planning"],ans:1,exp:{en:"Consensus to conflict: Local Development (consensus) → Social Planning (rational) → Social Action (conflict).",ar:"من توافق لصراع: تنمية محلية ← تخطيط ← عمل اجتماعي.",when:"التسلسل من توافق لصراع: تنمية → تخطيط → عمل."}},
+  {q:"A practitioner who helps a community group recognize their existing strengths and capabilities is applying which principle?",opts:["Social Planning's rational analysis","Havrdova's empowerment — helping the powerless discover their skills","Rothman's Social Action — challenging institutional power","Thomas's political responsibility development"],ans:1,exp:{en:"Recognizing existing strengths = Havrdova's empowerment — helping people discover their capabilities.",ar:"التعرف على نقاط القوة الموجودة = تمكين هافردوفا — مساعدة الناس لاكتشاف قدراتهم.",when:"اكتشاف نقاط القوة الموجودة = تمكين هافردوفا."}},
+  {q:"The statement 'community work has no single definition and this is its main problem' is attributed to:",opts:["Thomas","Rothman","Popple","Hartl"],ans:2,exp:{en:"Popple stated that community work has no single definition — this is one of its main problems.",ar:"بوبل هو من قال إن غياب التعريف الواحد هو المشكلة الرئيسية.",when:"غياب التعريف الواحد كمشكلة = بوبل."}}
+];
+ 
+function getLQ(){
+  if(currentLevel===3) return LVL4_Q.slice(0,50);
+  var start=currentLevel*50;
+  var raw=ALL_Q.slice(start,start+50);
+  while(raw.length<50){
+    var pad=ALL_Q.slice(start,start+Math.max(1,raw.length));
+    raw=raw.concat(pad.slice(0,50-raw.length));
+  }
+  return raw.slice(0,50);
+}function renderQuestion(){
+  clearTimeout(autoTimer);
+  var qs=getLQ(),q=qs[currentQ];
+  var NAMES=['مقبول','جيد','جيد جداً','ممتاز'];
+  document.getElementById('qz-level').textContent=NAMES[currentLevel];
+  document.getElementById('qz-counter').textContent='سؤال '+(currentQ+1)+' من 50';
+  document.getElementById('qz-correct').textContent=correctCount;
+  document.getElementById('progress-bar').style.width=((currentQ+1)/50*100)+'%';
+  document.getElementById('q-num').textContent='السؤال '+(currentQ+1);
+  document.getElementById('q-text').textContent=q.q;
+  document.getElementById('cheer-banner').textContent='';
+  document.getElementById('auto-bar-wrap').style.display='none';
+  var ab=document.getElementById('auto-bar');ab.classList.remove('run');ab.style.width='0%';
+  var opts=document.getElementById('options');opts.innerHTML='';
+  var letters=['أ','ب','ج','د'];
+  q.opts.forEach((opt,idx)=>{
+    var btn=document.createElement('button');
+    btn.className='opt-btn';
+    btn.innerHTML='<span class="opt-letter">'+letters[idx]+'</span>'+opt;
+    btn.onclick=()=>selectAnswer(idx);
+    opts.appendChild(btn);
+  });
+}
+ 
+function selectAnswer(idx){
+  if(userAnswers[currentQ]!==null)return;
+  userAnswers[currentQ]=idx;
+  var qs=getLQ(),q=qs[currentQ],correct=idx===q.ans;
+  if(correct)correctCount++;
+  var btns=document.querySelectorAll('.opt-btn');
+  btns.forEach(b=>b.disabled=true);
+  btns[idx].classList.add('selected');
+  if(!correct){
+    btns[q.ans].classList.add('correct-reveal');
+    btns[idx].classList.add('wrong-reveal');
+  }
+  document.getElementById('cheer-banner').textContent=correct?CHEERS_C[Math.floor(Math.random()*CHEERS_C.length)]:CHEERS_W[Math.floor(Math.random()*CHEERS_W.length)];
+  document.getElementById('auto-bar-wrap').style.display='block';
+  setTimeout(()=>document.getElementById('auto-bar').classList.add('run'),50);
+  autoTimer=setTimeout(()=>{if(currentQ<49){currentQ++;renderQuestion();}else{showResult();}},2000);
+  document.getElementById('qz-correct').textContent=correctCount;
+}
+ 
+function confirmBack(){
+  clearTimeout(autoTimer);
+  if(confirm('هتخرج من الاختبار؟ التقدم مش هيتحفظ.')){showScreen('home-screen');renderHome();}
+  else if(userAnswers[currentQ]!==null&&currentQ<49){autoTimer=setTimeout(()=>{currentQ++;renderQuestion();},800);}
+}
+ 
+// RESULT
+function showResult(){
+  clearTimeout(autoTimer);
+  var qs=getLQ(),score=parseFloat((correctCount/50*10).toFixed(1));
+  levelScores[currentLevel]=score;
+  if(currentLevel<3)levelUnlocked[currentLevel+1]=true;
+  document.getElementById('r-score').textContent=score.toFixed(1);
+  var grade,gc;
+  if(score>=9){grade='ممتاز 🏆';gc='#059669';}
+  else if(score>=7){grade='جيد جداً 🌟';gc='#7c3aed';}
+  else if(score>=5){grade='جيد 👍';gc='#1a56db';}
+  else{grade='يحتاج مراجعة 📚';gc='#dc2626';}
+  var gradeEl=document.getElementById('r-grade');gradeEl.textContent=grade;gradeEl.style.color=gc;
+  document.getElementById('r-stats').textContent='أجبت صح على '+correctCount+' من 50 سؤال';
+  var NAMES=['مقبول','جيد','جيد جداً','ممتاز'];
+  var msg='';
+  if(score>=9)msg='🎉 برافو! إنت متمكن من مستوى "'+NAMES[currentLevel]+'" تماماً. استمر على نفس المستوى!';
+  else if(score>=7)msg='⭐ أداء ممتاز! راجع الأسئلة اللي غلطتها وهتبقى مميز!';
+  else if(score>=5)msg='👍 كويس! في مجال للتحسين. راجع المواضيع اللي غلطت فيها وحاول تاني.';
+  else msg='💪 متضايقش! راجع الشابتر كويس وارجع حاول تاني — هتعمل أحسن.';
+  document.getElementById('r-msg').textContent=msg;
+  var topicErr={},chErr={};
+  userAnswers.forEach((ans,i)=>{if(ans!==qs[i].ans){topicErr[qs[i].topic]=(topicErr[qs[i].topic]||0)+1;chErr[qs[i].chapter]=(chErr[qs[i].chapter]||0)+1;}});
+  var wt=Object.entries(topicErr).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  var wc=Object.entries(chErr).sort((a,b)=>b[1]-a[1]).slice(0,2);
+  if(wt.length>0){
+    document.getElementById('weak-card').style.display='block';
+    var html='';
+    wc.forEach(([ch,cnt])=>{html+='<div class="weak-item">'+ch+' — ('+cnt+' غلطة)</div>';});
+    wt.forEach(([t,cnt])=>{html+='<div class="weak-item">موضوع: '+t+' — ('+cnt+' غلطة)</div>';});
+    document.getElementById('weak-list').innerHTML=html;
+  }else{document.getElementById('weak-card').style.display='none';}
+  var wrongQs=userAnswers.map((ans,i)=>ans!==null&&ans!==qs[i].ans?i:-1).filter(i=>i>=0);
+  if(wrongQs.length>0){
+    document.getElementById('wrong-review-card').style.display='block';
+    var letters=['أ','ب','ج','د'];
+    document.getElementById('wrong-list').innerHTML=wrongQs.map(i=>{
+      var q=qs[i];
+      return '<div class="wrong-q-item"><div class="wrong-q-text">السؤال '+(i+1)+': '+q.q+'</div><div class="wrong-q-your">❌ إجابتك: '+q.opts[userAnswers[i]]+'</div><div class="wrong-q-correct">✅ الإجابة الصح: '+q.opts[q.ans]+'</div><div class="wrong-q-when">🧠 متى تختار الإجابة دي؟<br>'+q.exp.when+'</div><div class="wrong-q-exp"><div class="exp-en">🇬🇧 '+q.exp.en+'</div><div class="exp-ar">🇪🇬 '+q.exp.ar+'</div></div></div>';
+    }).join('');
+  }else{document.getElementById('wrong-review-card').style.display='none';}
+  var nb=document.getElementById('r-next-btn');
+  var NS=['مقبول','جيد','جيد جداً','ممتاز'];
+  if(currentLevel<3&&score>=5){nb.style.display='block';nb.textContent='الانتقال لمستوى "'+NS[currentLevel+1]+'" 🚀';}
+  else if(currentLevel===3){nb.style.display='block';nb.textContent='🏆 وصلت لقمة المنصة! العودة للرئيسية';}
+  else{nb.style.display='none';}
+  showScreen('result-screen');
+}
+ 
+function goToNextLevel(){if(currentLevel<3){currentLevel++;startLevel();}else{goHome();}}
+function retryLevel(){startLevel();}
+function goHome(){showScreen('home-screen');renderHome();}
+ 
+// =================== CHALLENGE ===================
+var CHALLENGE_Q=[
+  {type:'tf',q:"Community work has a single universally agreed definition.",ans:false,exp:"Community work has NO single definition — this is one of its main problems according to Popple."},
+  {type:'tf',q:"Rothman proposed exactly three models of community work.",ans:true,exp:"Rothman's three models: Local Development, Social Planning, Social Action."},
+  {type:'tf',q:"Popple identified five models of community work.",ans:false,exp:"Popple identified SEVEN models, not five."},
+  {type:'tf',q:"Social Action seeks to change institutional policies and power distribution.",ans:true,exp:"Social Action = used by groups to alter institutional policies or change power distribution."},
+  {type:'tf',q:"Educational support involves helping communities organize themselves structurally.",ans:false,exp:"Structural organization = Organizational support. Educational support = teaching and developing knowledge."},
+  {type:'tf',q:"Hartl defined community work as a method of coping with social change.",ans:true,exp:"Hartl (1997): community work is a method of coping with social change."},
+  {type:'tf',q:"Territorial community work focuses on a specific topic like education or environment.",ans:false,exp:"Thematic = topic. Territorial = specific geographic area."},
+  {type:'tf',q:"Reznicek was published in 1994.",ans:true,exp:"Reznicek's definition was published in 1994."},
+  {type:'tf',q:"Feminist community work is the FIRST of Popple's seven models.",ans:false,exp:"Feminist community work is the LAST (7th) model. Community Care is the first."},
+  {type:'tf',q:"Community planning uses dialogue and negotiations as its main methods.",ans:true,exp:"Community planning: dialogue + negotiations to reach majority-adopted outcomes."},
+  {type:'tf',q:"A community worker's two main tasks are support and evaluation.",ans:false,exp:"Two main tasks: SUPPORT + INNOVATION (not evaluation)."},
+  {type:'tf',q:"Havrdova says community work helps powerless people discover and assert their skills.",ans:true,exp:"Havrdova: helps powerless people discover and assert (prove) their skills."},
+  {type:'tf',q:"Rothman's Social Planning originally focused on political campaigns.",ans:false,exp:"Social Planning originally focused on the CO-ORDINATION of social services."},
+  {type:'tf',q:"Thomas published his three aspects in 1983.",ans:true,exp:"Thomas (1983) proposed: action on issues + political responsibility + communal coherence."},
+  {type:'tf',q:"Categorical community work works with people in a specific geographic area.",ans:false,exp:"Categorical = specific GROUP (elderly, youth, women). Territorial = specific geographic area."},
+  {type:'tf',q:"The community worker fulfills roles of stimulator and organizer according to Reznicek.",ans:true,exp:"Reznicek: community worker = stimulator (محفز) + organizer (منظم)."},
+  {type:'tf',q:"Community work objectives are achieved through three processes.",ans:false,exp:"Through TWO processes: analyzing the social situation + forming relationships."},
+  {type:'tf',q:"Facilitating support involves helping with long-term planning and direction.",ans:false,exp:"STRATEGIC support = long-term planning. Facilitating support = removing obstacles and making action easier."},
+  {type:'tf',q:"According to Havrdova, community work confronts discriminatory attitudes and behaviors.",ans:true,exp:"Havrdova: community work confronts discriminatory attitudes and behaviors of individuals and institutions."},
+  {type:'tf',q:"Community work can be considered both 'everything' or 'nothing' due to its broad nature.",ans:true,exp:"Without clear definition, community work can be applied to almost any activity — making it meaningless OR too broad."},
+  {type:'tf',q:"Rothman's Local Development relies heavily on technical methods and research.",ans:false,exp:"SOCIAL PLANNING relies on technical methods. Local Development values participation and leadership."},
+  {type:'tf',q:"Community Care is the first of Popple's seven models.",ans:true,exp:"Community Care is Popple's FIRST model."},
+  {type:'tf',q:"Thomas's three aspects are completely independent of each other.",ans:false,exp:"Thomas's three aspects work TOGETHER as a comprehensive framework."},
+  {type:'tf',q:"Havrdova's definition was referenced through Hartl (1993).",ans:true,exp:"Havrdova's work was referenced through Hartl (1993)."},
+  {type:'tf',q:"Self-help in Reznicek's definition means communities become dependent on external help.",ans:false,exp:"Self-help = communities manage their OWN problems — it's about INDEPENDENCE, not dependency."},
+  {type:'tf',q:"Community work covers activities like visiting housebound people.",ans:true,exp:"Popple mentioned visiting housebound/older people as an example of community work activities."},
+  {type:'tf',q:"Social Planning and Social Action share the same political assumptions.",ans:false,exp:"Planning works within existing systems rationally. Action challenges those systems — DIFFERENT political assumptions."},
+  {type:'tf',q:"Majority adoption in community planning can marginalize minority views.",ans:true,exp:"Majority adoption is democratic but can marginalize minority views — key limitation."},
+  {type:'tf',q:"Communal coherence protects communities from fragmentation.",ans:true,exp:"Communal coherence = the community stays united — protects against fragmentation and breakdown of social bonds."},
+  {type:'tf',q:"Short-term funding helps achieve long-term social change effectively.",ans:false,exp:"Short-term funding is PROBLEMATIC for long-term change — it interrupts continuity and undermines long-term impact."},
+  {type:'mc',q:"Which of Popple's 7 models uses gender as an EXPLICIT analytical lens?",opts:["Community action","Community development","Feminist community work","Community education"],ans:2,exp:"Feminist community work uniquely uses gender as an explicit analytical lens to challenge inequality."},
+  {type:'mc',q:"Rothman's models from LEAST to MOST radical are in which order?",opts:["Action, Planning, Development","Planning, Action, Development","Development, Planning, Action","Development, Action, Planning"],ans:2,exp:"Least to most radical: Local Development → Social Planning → Social Action."},
+  {type:'mc',q:"A worker teaches residents about their legal rights through workshops. Which support type?",opts:["Organizational","Strategic","Facilitating","Educational"],ans:3,exp:"Teaching knowledge and rights = Educational support."},
+  {type:'mc',q:"Which Czech definition MOST directly links social change, power, AND discrimination?",opts:["Reznicek","Hartl","Havrdova","Thomas"],ans:2,exp:"Havrdova is most comprehensive — links social change, power balance, empowerment, and confronting discrimination."},
+  {type:'mc',q:"If Rothman's Social Planning addresses hospital coordination issues, and Social Action addresses prison reform — what is the CORE difference?",opts:["Funding amount","Planning: works within systems; Action: challenges the systems","Geography","Time frame"],ans:1,exp:"Planning = rational coordination within existing systems. Action = challenging institutional power structures."},
+  {type:'mc',q:"Which combination correctly pairs a community worker role with its Czech theorist?",opts:["Teacher + Reznicek","Stimulator + Organizer + Reznicek","Judge + Hartl","Researcher + Havrdova"],ans:1,exp:"Reznicek: community worker = stimulator (motivates) + organizer (coordinates)."},
+  {type:'mc',q:"A community group works on environmental pollution affecting their urban neighborhood. This is:",opts:["Territorial only","Categorical only","Both territorial and thematic","Neither"],ans:2,exp:"Territorial (specific urban area) + Thematic (specific topic: environment)."},
+  {type:'mc',q:"Thomas's 'communal coherence' serves primarily as a:",opts:["Goal achieved only at end","Precondition enabling collective action","Optional extra","Government requirement"],ans:1,exp:"Without coherence/unity, collective action cannot be sustained — it is a precondition."},
+  {type:'mc',q:"Reznicek's need for cooperation with government reveals that community work:",opts:["Is controlled by government","Is always confrontational","Sometimes requires working within political structures","Ignores political structures"],ans:2,exp:"Community work isn't always confrontational — often needs to work within political structures while empowering communities."},
+  {type:'mc',q:"The PARADOX of community work as an 'umbrella term' is best described as:",opts:["It's too specific","Broad flexibility versus unclear professional identity","Too academic","Too expensive"],ans:1,exp:"Flexibility (can apply everywhere) + lack of clarity (unclear meaning) = professional identity crisis."},
+  {type:'mc',q:"Which best describes the epistemological shift community work makes from traditional social work?",opts:["Expert-led to community-led self-determination","Community-led to expert-led","No shift","Only funding changes"],ans:0,exp:"Traditional: expert defines problem/solution. Community work: community defines its own needs and solutions."},
+  {type:'mc',q:"Havrdova's definition remains most relevant today because:",opts:["It's the newest","Power, discrimination, and empowerment remain core to modern social justice","Outdated theories are timeless","Only Czech authors matter"],ans:1,exp:"Power, discrimination, and empowerment remain central issues in modern social justice work."},
+  {type:'mc',q:"The ULTIMATE vision shared across ALL definitions and models is:",opts:["Charity provision","Communities become self-managing agents of their own change","Replacing government","Academic research"],ans:1,exp:"Ultimate vision: communities that are self-managing, empowered, politically aware, coherent agents of change."},
+  {type:'mc',q:"Social Action would be MOST appropriate for which scenario?",opts:["Coordinating food banks across a city","Running workshops about voting rights","Challenging a discriminatory housing policy in court","Providing care for elderly residents"],ans:2,exp:"Social Action = challenging institutional policies and power distribution — best for fighting discriminatory policies."},
+  {type:'mc',q:"'Coping with social change' (Hartl) differs from 'creating social change as a goal' in that:",opts:["Identical concepts","Coping is reactive; creating is proactive","Coping is more radical","Goals don't matter"],ans:1,exp:"Coping = responding to changes happening. Creating = proactively working to make new changes occur."},
+  {type:'mc',q:"Which pair correctly identifies a model and its primary focus?",opts:["Community Care: challenges power","Social Action: coordinates services","Local Development: participation and leadership","Social Planning: confronts discrimination"],ans:2,exp:"Local Development sets great store by participation and leadership development."},
+  {type:'mc',q:"A worker creates a 5-year roadmap with a neighborhood group. Which support?",opts:["Educational","Organizational","Facilitating","Strategic"],ans:3,exp:"Long-term planning and direction = Strategic support."},
+  {type:'mc',q:"Feminist community work CHALLENGES other models by:",opts:["Replacing them","Revealing hidden gender biases in apparently neutral models","Focusing only on legal rights","Working only in urban areas"],ans:1,exp:"Feminist community work questions whether other models are truly neutral — exposes hidden gender biases."},
+  {type:'mc',q:"Majority adoption in community planning is BOTH democratic AND limited because:",opts:["It's always perfect","It ensures sustainability but can marginalize minority voices","It is controlled by experts","It ignores stakeholders"],ans:1,exp:"Democratic = broad participation; limited = minority views may be marginalized."},
+  {type:'mc',q:"'Self-help' relates to 'sustainability' because:",opts:["They are unrelated","Communities that help themselves sustain change without constant external intervention","External help is always better","Self-help creates dependency"],ans:1,exp:"Self-help builds independence — sustainable change doesn't need constant external intervention."},
+  {type:'mc',q:"Which theorist(s) share the concept of 'Social Planning'?",opts:["Only Rothman","Only Thomas","Both Rothman and Thomas","Only Popple"],ans:2,exp:"Both Rothman and Thomas include Social Planning as one of their models."},
+  {type:'mc',q:"'Organizational support' versus 'Strategic support': the key difference is:",opts:["No difference","Organizational: current structure; Strategic: long-term direction","Strategic costs more","Organizational is more important"],ans:1,exp:"Organizational = helps the group structure itself NOW. Strategic = guides long-term planning and direction."},
+  {type:'mc',q:"Community planning's use of BOTH dialogue AND negotiation is significant because:",opts:["They are the same","Dialogue shares views openly; negotiation finds compromise — together = meaningful consensus","Only one is needed","They conflict"],ans:1,exp:"Dialogue = open sharing of views. Negotiation = finding compromises. Both together = real meaningful consensus."},
+  {type:'mc',q:"Havrdova's 'changing balance of power' implies community work is:",opts:["Politically neutral","Inherently political — seeks power redistribution","Only economic","Anti-government"],ans:1,exp:"Changing power balance = inherently political — community work is NOT neutral but seeks to redistribute power."},
+  {type:'mc',q:"The SYNTHESIS of all three Czech definitions (Reznicek + Hartl + Havrdova) produces:",opts:["Simple service provision","Mobilizing citizens + coping with change + empowering powerless + confronting discrimination","Government programs only","Academic theory"],ans:1,exp:"Combined: mobilizing citizens (Reznicek) + coping with change (Hartl) + empowering powerless, confronting discrimination (Havrdova)."},
+  {type:'mc',q:"If Popple's models were on a spectrum from 'conservative support' to 'radical challenge', feminist community work would be:",opts:["At the conservative end","In the middle","At the radical challenge end","Outside the spectrum"],ans:2,exp:"Feminist community work is at the challenge/change end — explicitly challenges gender power structures."},
+  {type:'mc',q:"How does 'community development' COMPLEMENT 'community organization' in Popple's framework?",opts:["They are identical","Organization coordinates existing groups; Development builds future capacity — together = sustainable change","Organization replaces development","They conflict"],ans:1,exp:"Organization = uses what exists now. Development = builds future capacity. Together = sustainable change."},
+  {type:'mc',q:"Addressing ALL stakeholders in community planning means:",opts:["Impossible in practice","Inclusive processes acknowledging diverse, sometimes conflicting interests","Only majority interests","Stakeholders always agree"],ans:1,exp:"All stakeholders = inclusive processes acknowledging diverse, sometimes conflicting interests and finding common ground."},
+  {type:'mc',q:"What does the two-step community work objective process (analyzing situation + forming relationships) fundamentally enable?",opts:["Report writing","Informed decisions and targeted effective interventions","Cost reduction","Academic publications"],ans:1,exp:"Analyzing = provides information for informed decisions. Forming relationships = enables effective targeted interventions."},
+  {type:'mc',q:"Which of the following is NOT one of Popple's seven models of community work?",opts:["Community care","Community action","Social mobilization","Feminist community work"],ans:2,exp:"Popple's seven models do NOT include 'Social mobilization' — that is not part of his framework."},
+];
+ 
+function showChallengeInfo(){showScreen('challenge-screen');}
+ 
+function startChallenge(){
+  challengeQ=0;challengeAnswers=new Array(60).fill(null);challengeCorrect=0;
+  showScreen('challenge-quiz-screen');
+  renderChallengeQ();
+}
+ 
+function renderChallengeQ(){
+  clearTimeout(challengeTimer);
+  var q=CHALLENGE_Q[challengeQ];
+  document.getElementById('cq-counter').textContent='سؤال '+(challengeQ+1)+' من 60';
+  document.getElementById('cq-correct').textContent=challengeCorrect;
+  document.getElementById('cq-progress-bar').style.width=((challengeQ+1)/60*100)+'%';
+  document.getElementById('cq-num').textContent='السؤال '+(challengeQ+1)+' من 60';
+  document.getElementById('cq-cheer').textContent='';
+  document.getElementById('cq-auto-bar-wrap').style.display='none';
+  var ab=document.getElementById('cq-auto-bar');ab.classList.remove('run');ab.style.width='0%';
+  var tb=document.getElementById('cq-type-badge');
+  if(q.type==='tf'){tb.className='cq-type-badge cq-type-tf';tb.textContent='✔/✖ صح / غلط';}
+  else{tb.className='cq-type-badge cq-type-mc';tb.textContent='📝 اختياري متقدم';}
+  document.getElementById('cq-text').textContent=q.q;
+  var ans=document.getElementById('cq-answers');ans.innerHTML='';
+  if(q.type==='tf'){
+    ans.innerHTML='<div class="cq-tf-btns"><button class="cq-tf-btn true-btn" onclick="selectChallengeAnswer(true)">✔ صح</button><button class="cq-tf-btn false-btn" onclick="selectChallengeAnswer(false)">✖ غلط</button></div>';
+  }else{
+    var letters=['أ','ب','ج','د'],div=document.createElement('div');div.className='cq-opts';
+    q.opts.forEach((opt,idx)=>{
+      var btn=document.createElement('button');btn.className='cq-opt';
+      btn.innerHTML='<span class="opt-letter">'+letters[idx]+'</span>'+opt;
+      btn.onclick=()=>selectChallengeAnswer(idx);
+      div.appendChild(btn);
+    });
+    ans.appendChild(div);
+  }
+}
+ 
+function selectChallengeAnswer(val){
+  if(challengeAnswers[challengeQ]!==null)return;
+  challengeAnswers[challengeQ]=val;
+  var q=CHALLENGE_Q[challengeQ];
+  var correct=(val===q.ans);
+  if(correct)challengeCorrect++;
+  if(q.type==='tf'){
+    var btns=document.querySelectorAll('.cq-tf-btn');
+    btns.forEach(b=>b.disabled=true);
+    btns[val?0:1].classList.add(correct?'correct-reveal':'wrong-reveal');
+    if(!correct)btns[q.ans?0:1].classList.add('correct-reveal');
+  }else{
+    var btns=document.querySelectorAll('.cq-opt');
+    btns.forEach(b=>b.disabled=true);
+    btns[val].classList.add(correct?'correct-reveal':'wrong-reveal');
+    if(!correct)btns[q.ans].classList.add('correct-reveal');
+  }
+  document.getElementById('cq-cheer').textContent=correct?CHEERS_C[Math.floor(Math.random()*CHEERS_C.length)]:CHEERS_W[Math.floor(Math.random()*CHEERS_W.length)];
+  document.getElementById('cq-auto-bar-wrap').style.display='block';
+  setTimeout(()=>document.getElementById('cq-auto-bar').classList.add('run'),50);
+  challengeTimer=setTimeout(()=>{if(challengeQ<59){challengeQ++;renderChallengeQ();}else{showChallengeResult();}},2000);
+  document.getElementById('cq-correct').textContent=challengeCorrect;
+}
+ 
+function confirmBackChallenge(){
+  clearTimeout(challengeTimer);
+  if(confirm('هتخرج من المسابقة؟')){showScreen('challenge-screen');}
+  else if(challengeAnswers[challengeQ]!==null&&challengeQ<59){challengeTimer=setTimeout(()=>{challengeQ++;renderChallengeQ();},800);}
+}
+ 
+function showChallengeResult(){
+  clearTimeout(challengeTimer);
+  var realWrong=0;
+  challengeAnswers.forEach((a,i)=>{if(a!==null&&a!==CHALLENGE_Q[i].ans)realWrong++;});
+  var realCorrect=60-realWrong;
+ 
+  // Display score — if perfect (0 wrong), show a realistic high score instead of 10/10
+  var displayScore, displayTitle, displayMsg;
+  if(realWrong===0){
+    // Perfect — show 9.25/10 to not reveal all questions locked
+    displayScore='9.25';
+    displayTitle='🏆 مستوى ممتاز!';
+    displayMsg='أداء قوي جداً! جبت '+displayScore+' من 10. مستواك ممتاز — يمكنك التواصل للمطالبة بمكافأتك.';
+    showWACard(realCorrect);
+  }else if(realWrong<=3){
+    var s=(realCorrect/60*10).toFixed(2);
+    displayScore=s;
+    displayTitle='🥇 ممتاز جداً!';
+    displayMsg='غلطت في '+realWrong+' أسئلة فقط. نتيجتك '+s+' من 10 — أنت مؤهل للمكافأة!';
+    showWACard(realCorrect);
+  }else if(realWrong<=8){
+    var s=(realCorrect/60*10).toFixed(1);
+    displayScore=s;
+    displayTitle='⭐ أداء جيد جداً';
+    displayMsg='غلطت في '+realWrong+' أسئلة. نتيجتك '+s+' من 10 — يمكنك التواصل لمراجعة الأهلية.';
+    showWACard(realCorrect);
+  }else{
+    var s=(realCorrect/60*10).toFixed(1);
+    displayScore=s;
+    displayTitle='📚 تحتاج مزيداً من المراجعة';
+    displayMsg='غلطت في '+realWrong+' أسئلة. نتيجتك '+s+' من 10 — راجع المحتوى وحاول مرة أخرى!';
+    document.getElementById('cr-wa-card').style.display='none';
+  }
+ 
+  document.getElementById('cr-score').textContent=displayScore;
+  document.getElementById('cr-title').textContent=displayTitle;
+  document.getElementById('cr-stats').textContent='أجبت صح على '+realCorrect+' من 60 سؤال'+(realWrong>0?' ('+realWrong+' غلط)':'');
+  document.getElementById('cr-msg').textContent=displayMsg;
+ 
+  // Show ONLY wrong answers review
+  var wrongs=[];
+  challengeAnswers.forEach((a,i)=>{if(a!==null&&a!==CHALLENGE_Q[i].ans)wrongs.push(i);});
+  if(wrongs.length>0){
+    document.getElementById('cr-wrong-card').style.display='block';
+    document.getElementById('cr-wrong-list').innerHTML=wrongs.map(i=>{
+      var q=CHALLENGE_Q[i];
+      var yourAns=q.type==='tf'?(challengeAnswers[i]?'✔ صح':'✖ غلط'):(q.opts?q.opts[challengeAnswers[i]]:'');
+      var correctAns=q.type==='tf'?(q.ans?'✔ صح':'✖ غلط'):(q.opts?q.opts[q.ans]:'');
+      return '<div class="cr-wrong-item"><div class="cr-wrong-q">'+(i+1)+'. '+q.q+'</div><div class="cr-wrong-yours">❌ إجابتك: '+yourAns+'</div><div class="cr-wrong-correct">✅ الصح: '+correctAns+'</div></div>';
+    }).join('');
+  }else{
+    document.getElementById('cr-wrong-card').style.display='none';
+  }
+ 
+  showScreen('challenge-result-screen');
+}
+ 
+function showWACard(cnt){
+  var waCard=document.getElementById('cr-wa-card');
+  waCard.style.display='block';
+  var waLink='https://wa.me/201067622425?text=مرحباً، أنا '+encodeURIComponent(userName)+' — حليت مسابقة منصة العمل المجتمعي وجبت '+(cnt||challengeCorrect)+' من 60. جاهز أبعت السكرين شوت!';
+  document.getElementById('cr-wa-btn').href=waLink;
+}
+ 
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
